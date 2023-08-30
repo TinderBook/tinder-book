@@ -18,9 +18,13 @@ const bookSchema = new Schema_({
         trim: true
     },
     coverImage: {
-        type: String,
+        type: String, // Esto se asume que es una URL.
         trim: true
-    }
+    },
+    matches: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Match'
+    }]
 });
 
 const Book = mongoose.model("Book", bookSchema)
