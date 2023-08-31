@@ -47,12 +47,19 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   },
-  likedBooks: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Book'
-  }]
+  likedBooks: {
+    type: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Book'
+    }],
+    validate: [arrayLimit, 'Seleccion exceeds the limit of 4 books']
+  }
 });
 
 const User = mongoose.model('User', userSchema);
+
+function arrayLimit(val) {
+  return val.length <= 4;
+}
 
 module.exports = User;
