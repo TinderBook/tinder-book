@@ -14,7 +14,8 @@ app.set("views", `${__dirname}/views`);
 app.use(express.static("public"));
 
 //Routes
-const router = require("./config/routes.config");
+const routes = require('./config/routes.config');
+app.use(routes)
 
 
 const PORT = process.env.PORT || 3000;
