@@ -62,4 +62,19 @@ function arrayLimit(val) {
   return val.length <= 4;
 }
 
+userSchema.pre('save', function(next) {
+  const user = this;
+
+  if(user.isModified('password')) {
+      bcrypt.hash(user.password, WORK_FACTOR)
+          .then((hash)=> {
+              user.password = hash;
+              next();
+          })
+          .catch((error)=> next(error))
+  } else {
+      next();
+  }
+})
+
 module.exports = User;
