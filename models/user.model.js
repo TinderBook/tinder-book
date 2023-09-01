@@ -1,8 +1,9 @@
 
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 const WORK_FACTOR = 10;
-const Schema = mongoose.Schema;
+
 
 const userSchema = new Schema({
   name: {
@@ -56,8 +57,6 @@ const userSchema = new Schema({
   }
 });
 
-const User = mongoose.model('User', userSchema);
-
 function arrayLimit(val) {
   return val.length <= 4;
 }
@@ -76,5 +75,7 @@ userSchema.pre('save', function(next) {
       next();
   }
 })
+
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
