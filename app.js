@@ -13,6 +13,8 @@ require('./config/db.config')
 app.set("view engine", "hbs");
 app.set("views", `${__dirname}/views`);
 
+app.use(express.urlencoded({ extended: true}));
+
 //Configure static fields
 app.use(express.static("public"));
 

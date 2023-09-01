@@ -37,5 +37,6 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.doLogin = (req, res, next) => {
-    req.res('dashboard')
+    res.render('dashboard')
 }
+
