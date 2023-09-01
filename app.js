@@ -15,6 +15,9 @@ app.set("views", `${__dirname}/views`);
 
 app.use(express.urlencoded({ extended: true}));
 
+const sessionConfig = require('./config/session.config');
+app.use(sessionConfig.session);
+
 //Configure static fields
 app.use(express.static("public"));
 
