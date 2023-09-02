@@ -1,8 +1,22 @@
 [  
     {
-        "name": "carlos"
+        "title": "El señor de los anillos",
+        "author": "J.R.R Tolkien",
+        "genre": "Fatansia"
     },
     {
-        "name": ""
+        "title": "La torre oscura",
+        "author": "Stephen King",
+        "genre": "Terror"
+    },
+    {
+        "title": "Fundacion",
+        "author": "Isaac Asimov",
+        "genre": "Ciencia ficcion"
+    },
+    {
+        "title": "Los pilares de la tierra",
+        "author": "Ken Follet",
+        "genre": "Historia"
     }
 ]
