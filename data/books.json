@@ -1,8 +1,8 @@
-[  
+[
     {
         "title": "El señor de los anillos",
         "author": "J.R.R Tolkien",
-        "genre": "Fatansia"
+        "genre": "Fantasía"
     },
     {
         "title": "La torre oscura",
@@ -10,9 +10,9 @@
         "genre": "Terror"
     },
     {
-        "title": "Fundacion",
+        "title": "Fundación",
         "author": "Isaac Asimov",
-        "genre": "Ciencia ficcion"
+        "genre": "Ciencia ficción"
     },
     {
         "title": "Los pilares de la tierra",
@@ -20,7 +20,218 @@
         "genre": "Historia"
     },
     {
-        "title":"La canción de cazarrabo",
-        "author":"Tad Williams"
+        "title": "La canción de cazarrabo",
+        "author": "Tad Williams",
+        "genre": "Fantasía"
+    },
+    {
+        "title": "Orgullo y prejuicio",
+        "author": "Jane Austen",
+        "genre": "Romance"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Distopía"
+    },
+    {
+        "title": "Cien años de soledad",
+        "author": "Gabriel García Márquez",
+        "genre": "Realismo mágico"
+    },
+    {
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "genre": "Aventura"
+    },
+    {
+        "title": "El gran Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Ficción literaria"
+    },
+    {
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "genre": "Terror"
+    },
+    {
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Arthur Conan Doyle",
+        "genre": "Misterio"
+    },
+    {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre": "Distopía"
+    },
+    {
+        "title": "Un mundo feliz",
+        "author": "Aldous Huxley",
+        "genre": "Distopía"
+    },
+    {
+        "title": "Drácula",
+        "author": "Bram Stoker",
+        "genre": "Terror"
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "genre": "Ciencia ficción"
+    },
+    {
+        "title": "El conde de Montecristo",
+        "author": "Alexandre Dumas",
+        "genre": "Aventura"
+    },
+    {
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "genre": "Aventura"
+    },
+    {
+        "title": "Viaje al centro de la tierra",
+        "author": "Jules Verne",
+        "genre": "Aventura"
+    },
+    {
+        "title": "La guerra de los mundos",
+        "author": "H.G. Wells",
+        "genre": "Ciencia ficción"
+    },
+    {
+        "title": "Crimen y castigo",
+        "author": "Fyodor Dostoevsky",
+        "genre": "Ficción literaria"
+    },
+    {
+        "title": "Los miserables",
+        "author": "Victor Hugo",
+        "genre": "Historia"
+    },
+    {
+        "title": "Rebelión en la granja",
+        "author": "George Orwell",
+        "genre": "Satírica"
+    },
+    {
+        "title": "Jane Eyre",
+        "author": "Charlotte Bronte",
+        "genre": "Romance"
+    },
+    {
+        "title": "El resplandor",
+        "author": "Stephen King",
+        "genre": "Terror"
+    },
+    {
+        "title": "El juego de Ender",
+        "author": "Orson Scott Card",
+        "genre": "Ciencia ficción"
+    },
+    {
+        "title": "Los juegos del hambre",
+        "author": "Suzanne Collins",
+        "genre": "Distopía"
+    },
+    {
+        "title": "Lo que el viento se llevó",
+        "author": "Margaret Mitchell",
+        "genre": "Historia"
+    },
+    {
+        "title": "Las crónicas de Narnia",
+        "author": "C.S. Lewis",
+        "genre": "Fantasía"
+    },
+    {
+        "title": "El nombre del viento",
+        "author": "Patrick Rothfuss",
+        "genre": "Fantasía"
+    },
+    {
+        "title": "Los hombres que no amaban a las mujeres",
+        "author": "Stieg Larsson",
+        "genre": "Misterio"
+    },
+    {
+        "title": "El código Da Vinci",
+        "author": "Dan Brown",
+        "genre": "Thriller"
+    },
+    {
+        "title": "El hobbit",
+        "author": "J.R.R Tolkien",
+        "genre": "Fantasía"
+    },
+    {
+        "title": "La chica del tren",
+        "author": "Paula Hawkins",
+        "genre": "Thriller"
+    },
+    {
+        "title": "Los pájaros y otros relatos",
+        "author": "Daphne du Maurier",
+        "genre": "Terror"
+    },
+    {
+        "title": "En el camino",
+        "author": "Jack Kerouac",
+        "genre": "Ficción literaria"
+    },
+    {
+        "title": "Cumbres borrascosas",
+        "author": "Emily Bronte",
+        "genre": "Romance"
+    },
+    {
+        "title": "Soy leyenda",
+        "author": "Richard Matheson",
+        "genre": "Ciencia ficción"
+    },
+    {
+        "title": "Un lugar llamado libertad",
+        "author": "Ken Follet",
+        "genre": "Historia"
+    },
+    {
+        "title": "Guía del autoestopista galáctico",
+        "author": "Douglas Adams",
+        "genre": "Ciencia ficción"
+    },
+    {
+        "title": "La ladrona de libros",
+        "author": "Markus Zusak",
+        "genre": "Historia"
+    },
+    {
+        "title": "Entrevista con el vampiro",
+        "author": "Anne Rice",
+        "genre": "Terror"
+    },
+    {
+        "title": "Alas negras",
+        "author": "Laura Gallego García",
+        "genre": "Fantasía"
+    },
+    {
+        "title": "El silencio de los corderos",
+        "author": "Thomas Harris",
+        "genre": "Thriller"
+    },
+    {
+        "title": "El viejo y el mar",
+        "author": "Ernest Hemingway",
+        "genre": "Ficción literaria"
+    },
+    {
+        "title": "Mujercitas",
+        "author": "Louisa May Alcott",
+        "genre": "Ficción literaria"
+    },
+    {
+        "title": "El retrato de Dorian Gray",
+        "author": "Oscar Wilde",
+        "genre": "Ficción literaria"
     }
 ]
