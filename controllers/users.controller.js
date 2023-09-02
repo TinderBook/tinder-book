@@ -4,10 +4,8 @@ const Book = require("../models/book.model");
 
 module.exports.register = (req, res, next) => {
     Book.find()
-        .then((books) => {
-            res.render('users/register', { books })
-        })
-        .catch()
+        .then((books) => res.render('users/register', { books }))
+        .catch((error) => next(error))
 
 }
 
@@ -18,7 +16,7 @@ module.exports.doRegister = (req, res, next) => {
                 res.render('users/register', {
                     user: req.body,
                     errors: {
-                        username: 'Username already exists'
+                        username: 'Username already exists',
                     }
                 })
             } else {
@@ -29,12 +27,16 @@ module.exports.doRegister = (req, res, next) => {
             }
         })
         .catch((error) => {
-            console.error(error);
-            if (error instanceof mongoose.Error.ValidationError) {
-                res.render('users/register')
+            if(error instanceof mongoose.Error.ValidationError){
+                
+                res.render('users/register', { 
+                    user: req.body, 
+                    errors: error.errors 
+                })
+                
             } else {
-                next(error);
-            }
+                next(error)
+            } 
         })
 
 }

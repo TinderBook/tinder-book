@@ -31,8 +31,17 @@
                         <input type="text" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password" aria-label="Name">
                         {{#if errors.password}}<div class="invalid-feedback">{{errors.password}}</div>{{/if}}
                     </div>
-
                     
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-fw fa-book"></i></span>
+                        <select name="likedBooks" multiple class="form-select">
+                            <option selected style="color: blue;">Select at least 4 books</option>
+                            {{#each books as |book|}}
+                                <option value="{{book.id}}">{{book.title}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
 
                     <div class="d-grid gap-3 mt-2">
                         <button class="btn btn-primary">Register</button>
