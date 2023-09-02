@@ -13,11 +13,16 @@ module.exports.doRegister = (req, res, next) => {
     User.findOne({ username: req.body.username })
         .then((user) => {
             if (user) {
-                res.render('users/register', {
-                    user: req.body,
-                    errors: {
-                        username: 'Username already exists',
-                    }
+                return Book.find()
+                    .then((books) => {
+                         res.render('users/register', {
+                            user: req.body,
+                            books: books,
+                            errors: {
+                                username: 'Username already exists',
+                            }
+                    })
+               
                 })
             } else {
                 return User.create(req.body)
@@ -29,16 +34,19 @@ module.exports.doRegister = (req, res, next) => {
         .catch((error) => {
             if(error instanceof mongoose.Error.ValidationError){
                 
-                res.render('users/register', { 
-                    user: req.body, 
-                    errors: error.errors 
+                Book.find()
+                    .then((books) => {
+                        res.render('users/register', { 
+                            user: req.body, 
+                            books: books,
+                            errors: error.errors 
+                    })
                 })
-                
+                .catch((error) => next(error));      
             } else {
                 next(error)
             } 
         })
-
 }
 
 module.exports.login = (req, res, next) => {
