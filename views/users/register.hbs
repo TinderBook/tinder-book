@@ -8,38 +8,39 @@
                     <div class="input-group mb-2">
                         <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
                         <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}" placeholder="name" aria-label="Name" value="{{user.name}}">
-                        {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+                        {{#if errors.name}}<div class="invalid-feedback fs-6">{{errors.name}}</div>{{/if}}
                     </div>
 
                                      {{!--email--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
                         <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}" placeholder="email" aria-label="Name" value="{{user.email}}">
-                        {{#if errors.email}}<div class="invalid-feedback">{{errors.email}}</div>{{/if}}
+                        {{#if errors.email}}<div class="invalid-feedback fs-6">{{errors.email}}</div>{{/if}}
                     </div>
 
                                     {{!--username--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
                         <input type="text" name="username" class="form-control {{#if errors.username}} is-invalid {{/if}}" placeholder="username" aria-label="Name" value="{{user.username}}">
-                        {{#if errors.username}}<div class="invalid-feedback">{{errors.username}}</div>{{/if}}
+                        {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
                     </div>
 
                                         {{!--password--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
                         <input type="text" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password" aria-label="Name">
-                        {{#if errors.password}}<div class="invalid-feedback">{{errors.password}}</div>{{/if}}
+                        {{#if errors.password}}<div class="invalid-feedback fs-6">{{errors.password}}</div>{{/if}}
                     </div>
                     
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-book"></i></span>
-                        <select name="likedBooks" multiple class="form-select">
-                            <option selected style="color: blue;">Select at least 4 books</option>
+                        <select name="likedBooks" multiple class="form-select {{#if errors.likedBooks}} is-invalid {{/if}}">
+                            <option selected>Select at least 4 books</option>
                             {{#each books as |book|}}
                                 <option value="{{book.id}}">{{book.title}}</option>
                             {{/each}}
                         </select>
+                        {{#if errors.likedBooks}} <div class="invalid-feedback fs-6">{{errors.likedBooks.message}}</div>{{/if}}
                     </div>
 
 
