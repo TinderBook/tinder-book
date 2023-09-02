@@ -1,8 +1,15 @@
 const User = require('../models/user.model');
 const mongoose = require("mongoose");
+const Book = require("../models/book.model");
 
+module.exports.register = (req, res, next) => {
+    Book.find()
+        .then((books) => {
+            res.render('users/register', { books })
+        })
+        .catch()
 
-module.exports.register = (req, res, next) => res.render('users/register')
+}
 
 module.exports.doRegister = (req, res, next) => {
     User.findOne({ username: req.body.username })
