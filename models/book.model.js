@@ -19,7 +19,10 @@ const bookSchema = new Schema({
     },
     coverImage: {
         type: String, // Esto se asume que es una URL.
-        trim: true
+        trim: true,
+        default: function(){
+            return `https://via.placeholder.com/150x200?text=Libro`
+        }
     },
     matches: [{
         type: Schema.Types.ObjectId,
