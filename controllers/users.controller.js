@@ -85,5 +85,8 @@ module.exports.doLogin = (req, res, next) => {
 
 
 module.exports.profile = (req, res, next) => {
-    res.render('users/profile', { user: req.user })
+    User.findById(req.user)
+        .then()
+        .catch()
+        res.render('users/profile', { user: req.user })
 }
