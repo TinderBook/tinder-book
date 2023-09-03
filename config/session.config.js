@@ -16,3 +16,19 @@ module.exports.session = expressSession({
         secure: process.env.SESSION_SECRET === 'true',
     }
 })
+
+module.exports.loadSessionUser = (req, res, next) => {
+    const userId = req.session.userId;
+    if(userId){
+        User.findById(userId)
+        .populate('likedBooks')
+        .then((user) => {
+            req.user = user;
+            res.locals.currentUser = user;
+            next();
+        })
+        .catch((error) => next(error));
+    } else {
+        next();
+    }    
+}
