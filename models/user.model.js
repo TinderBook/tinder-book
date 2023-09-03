@@ -40,9 +40,12 @@ const userSchema = new Schema({
     type: String,
     trim: true
   },
-  profileImage: {
+  avatarUrl: {
     type: String,   // Esto se asume que es una URL.
-    trim: true
+    trim: true,
+    default: function() {
+      return `https://i.pravatar.cc/200?u=${this.email}`
+    }
   },
   isAdmin: {
     type: Boolean,
