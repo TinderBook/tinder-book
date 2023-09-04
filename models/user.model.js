@@ -57,7 +57,15 @@ const userSchema = new Schema({
       ref: 'Book'
     }],
     validate: [arrayLimit, 'Seleccion exceeds the limit of 4 books']
-  }
+  },
+  likesReceived:[{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  likesGiven: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }]
 });
 
 function arrayLimit(val) {

@@ -10,6 +10,9 @@ router.get('/login', users.login)
 router.post('/login', users.doLogin)
 router.get('/profile', users.profile)
 
+//like ROUTE
+router.post('/users/:id/like' , users.likeUser)
+
 //Books CRUD
 
 
