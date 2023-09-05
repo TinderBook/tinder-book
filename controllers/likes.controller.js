@@ -2,7 +2,7 @@ const Like = require('../models/like.model.js');
 const User = require('../models/user.model.js');
 
 module.exports.likeUser = (req, res, next) => {   
-    const fromUser = req.currentUser.id;
+    const fromUser = req.session.userId;
     const toUser = req.params.id;
 
     Like.findOne({ fromUser: fromUser, toUser: toUser })
