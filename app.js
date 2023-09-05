@@ -29,6 +29,7 @@ app.use((req, res, next) => {
     next()
 })
 
+
 //Routes
 const routes = require('./config/routes.config');
 app.use(routes)

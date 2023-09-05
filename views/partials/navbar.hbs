@@ -11,7 +11,9 @@
       </ul>
       <ul class="navbar-nav">
         {{#if currentUser}}
-            <li class="nav-item"><a class="nav-link {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.email}}</a></li>
+            <li class="nav-item"><a class="nav-link me-2 {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.email}}</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary {{navActive navigationPath '/profile'}}" style="color: aliceblue;" aria-current="page" href="/user/{{user.id}}/editProfile">Edit</a></li>
+
         {{else}}
             <li class="nav-item"><a class="nav-link {{navActive navigationPath '/register'}}" aria-current="page" href="/register">Register</a></li>
             <li class="nav-item"><a class="nav-link {{navActive navigationPath '/login'}}" aria-current="page" href="/login">Login</a></li>

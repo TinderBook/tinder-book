@@ -119,3 +119,20 @@ module.exports.edit = (req, res, next) => {
     })
     .catch((error) => next(error))
 }
+
+module.exports.editProfile = (req, res, next) => {
+
+    User.findById(req.user)
+
+        .then( user => {
+            
+            return Book.find()
+                .then((books) => {
+
+                    res.render('users/edit', {user, books});
+
+            });
+        })
+            .catch((error) => next(error))
+
+}

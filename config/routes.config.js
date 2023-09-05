@@ -13,6 +13,7 @@ router.get('/login', users.login)
 router.post('/login', users.doLogin)
 router.get('/profile', secure.isAuthenticated, users.profile)
 router.post('/user/:id/edit', secure.isAuthenticated, users.edit)
+router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile) 
 
 //like ROUTE
 router.post('/users/:id/like' , users.likeUser)

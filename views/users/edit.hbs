@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center">
+                
+                <form action="/user/{{user._id}}/edit" method="POST" enctype="multipart/form-data">
+                    {{!-- editar imagen --}}
+                    <div class="mb-3">
+                        <label for="avatar" class="form-label rounded-circle">Profile Image</label>
+                        <input type="file" class="form-control" id="avatar" name="avatar">
+                        {{!-- <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150"> --}}
+
+                    </div>
+
+                    {{!-- username edit  --}}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nombre</label>
+                        <input name="name" type="text" class="form-control {{#if errors.name}} is-invalid {{/if}}" id="username" placeholder="username" value="{{user.username}}"/>
+                        {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
+
+                    </div>
+
+                    {{!--  edit description --}}
+                    <div class="mb-3">
+                        <label for="description" class="form-label text-muted small"></label>
+                        <textarea name="description" class="form-control" id="description" rows="5">{{user.description}}</textarea>
+                    </div>
+
+                    {{!-- edit likedBooks --}}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-fw fa-book">Books</i></span>
+                        <select name="likedBooks" multiple class="form-select {{#if errors.likedBooks}} is-invalid {{/if}}">
+                            <option selected>Select at least 4 books:</option>
+                            {{#each books as |book|}}
+                                <option value="{{book.id}}">{{book.title}}</option>
+                            {{/each}}
+                        </select>
+                        {{#if errors.likedBooks}} <div class="invalid-feedback fs-6">{{errors.likedBooks.message}}</div>{{/if}}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mb-2">Edit</button>
+
+                </form>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
