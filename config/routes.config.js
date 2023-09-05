@@ -3,6 +3,7 @@ const router = express.Router();
 const secure = require('../middlewares/secure.mid')
 
 const users = require('../controllers/users.controller')
+const likes = require('../controllers/likes.controller')    
 
 const dashboard = require('../controllers/dashboard.controller')
 
@@ -16,7 +17,7 @@ router.post('/user/:id/edit', secure.isAuthenticated, users.edit)
 router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile) 
 
 //like ROUTE
-router.post('/users/:id/like' , users.likeUser)
+router.post('/like/:id' , likes.likeUser)
 
 //Books CRUD
 

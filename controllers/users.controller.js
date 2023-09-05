@@ -92,7 +92,7 @@ module.exports.profile = (req, res, next) => {
 }
 
 
-module.exports.likeUser = (req, res, next) => {
+/*module.exports.likeUser = (req, res, next) => {
     const userId = req.user._id;
     const likedUserId = req.params.id;
 
@@ -107,7 +107,7 @@ module.exports.likeUser = (req, res, next) => {
             return User.findByIdAndUpdate(likedUserId, { $addToSet: { likesReceived: userId } }, { new: true });
         })
         .then(() => res.render("dashboard")) // por ejemplo
-}
+}*/
 
 module.exports.edit = (req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
