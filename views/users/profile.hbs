@@ -4,7 +4,20 @@
             <div class="text-center">
                 <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
                 <h2 class="mt-2">{{user.username}}</h2>
-                <p>{{user.description}}</p>
+                <div class="mt-2">
+                    <h3 class="mb-4"></h3>
+                    <h5><i> {{user.description}}</i> </h5>
+                </div>
+                
+                <form action="/user/{{user._id}}/edit" method="POST">
+                    <div class="mb-3">
+                        
+                        <label for="description" class="form-label text-muted small"></label>
+                        <textarea name="description" class="form-control" id="description" rows="5">{{user.description}}</textarea>
+                        <button type="submit" class="btn btn-primary mb-2">Edit</button>
+                    </div>
+                </form>
+
             </div>
             <hr>
             <h3 class="mb-4">Liked Books:</h3>

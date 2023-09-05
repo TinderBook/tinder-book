@@ -108,3 +108,14 @@ module.exports.likeUser = (req, res, next) => {
         })
         .then(() => res.redirect('/users')) // por ejemplo
 }
+
+module.exports.edit = (req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+        username: req.body.username,
+        description: req.body.description,
+    }, { new: true })
+    .then(() => {
+        res.redirect('/profile')
+    })
+    .catch((error) => next(error))
+}
