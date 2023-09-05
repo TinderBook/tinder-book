@@ -106,7 +106,7 @@ module.exports.likeUser = (req, res, next) => {
             // Añadir el usuario actual a la lista de "likesReceived" del usuario al que se da "like"
             return User.findByIdAndUpdate(likedUserId, { $addToSet: { likesReceived: userId } }, { new: true });
         })
-        .then(() => res.redirect('/users')) // por ejemplo
+        .then(() => res.render("dashboard")) // por ejemplo
 }
 
 module.exports.edit = (req, res, next) => {
