@@ -23,11 +23,7 @@ const bookSchema = new Schema({
         default: function(){
             return `https://via.placeholder.com/150x200?text=Libro`
         }
-    },
-    matches: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Match'
-    }]
+    }
 });
 
 const Book = mongoose.model("Book", bookSchema)

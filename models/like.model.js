@@ -23,3 +23,4 @@ likeSchema.index({ fromUser: 1, toUser: 1 }, { unique: true });
 const Like = mongoose.model('like', likeSchema);
 
 module.exports = Like;
+
