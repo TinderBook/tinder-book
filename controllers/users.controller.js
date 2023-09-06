@@ -94,7 +94,7 @@ module.exports.profile = (req, res, next) => {
 
 module.exports.edit = (req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
-        username: req.body.username,
+        
         description: req.body.description,
     }, { new: true })
     .then(() => {
@@ -103,6 +103,7 @@ module.exports.edit = (req, res, next) => {
     .catch((error) => next(error))
 }
 
+// Renderiza pagina de editar profile 
 module.exports.editProfile = (req, res, next) => {
 
     User.findById(req.user)
@@ -119,6 +120,12 @@ module.exports.editProfile = (req, res, next) => {
             .catch((error) => next(error))
 
 }
+
+// doEdit profile
+module.exports.doEditProfile = (req, res, next) => {
+    
+}
+
 
 module.exports.logout = (req, res, next) => {
     req.session.destroy();
