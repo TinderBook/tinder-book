@@ -71,7 +71,7 @@ module.exports.doLogin = (req, res, next) => {
                     .then((match) => {
                         if (match) {
                             req.session.userId = user.id;
-                            res.redirect('/profile')
+                            res.redirect('/dashboard')
                         } else {
                             renderInvalidUsername();
                         }
@@ -91,23 +91,6 @@ module.exports.profile = (req, res, next) => {
     res.render('users/profile', { user: req.user })
 }
 
-
-/*module.exports.likeUser = (req, res, next) => {
-    const userId = req.user._id;
-    const likedUserId = req.params.id;
-
-    // Añadir el usuario al que se da "like" a la lista de "likesGiven" del usuario actual
-    User.findByIdAndUpdate(userId, { $addToSet: { likesGiven: likedUserId } }, { new: true })
-        .then(user => {
-            // Verificar si hay un "match"
-            if (user.likesReceived.includes(likedUserId)) {
-                console.log("It's a match!");
-            }
-            // Añadir el usuario actual a la lista de "likesReceived" del usuario al que se da "like"
-            return User.findByIdAndUpdate(likedUserId, { $addToSet: { likesReceived: userId } }, { new: true });
-        })
-        .then(() => res.render("dashboard")) // por ejemplo
-}*/
 
 module.exports.edit = (req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
@@ -135,4 +118,9 @@ module.exports.editProfile = (req, res, next) => {
         })
             .catch((error) => next(error))
 
+}
+
+module.exports.logout = (req, res, next) => {
+    req.session.destroy();
+    res.redirect('/login')
 }

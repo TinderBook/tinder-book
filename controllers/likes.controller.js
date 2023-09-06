@@ -6,8 +6,8 @@ module.exports.likeUser = (req, res, next) => {
     const toUser = req.params.id;
 
     Like.findOne({ fromUser: fromUser, toUser: toUser })
-        .then(existingLike => {
-            if (existingLike) {
+        .then(existingLikes => {
+            if (existingLikes) {
                 return Like.deleteOne({ fromUser: fromUser, toUser: toUser })
             } else {
                 return Like.create({ fromUser: fromUser, toUser: toUser })
