@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container">
     <a class="navbar-brand" href="/dashboard">TinderBook</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
@@ -7,13 +7,21 @@
     </button>
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if currentUser}}
         <li class="nav-item"><a class="nav-link {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">Profile</a></li>
+        {{/if}}
       </ul>
       <ul class="navbar-nav">
         {{#if currentUser}}
-            <li class="nav-item"><a class="nav-link me-2 {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.email}}</a></li>
-            <li class="nav-item"><a class="nav-link btn btn-primary {{navActive navigationPath '/profile'}}" style="color: aliceblue;" aria-current="page" href="/user/{{user.id}}/editProfile">Edit</a></li>
-
+            {{#ifEqual navigationPath "/dashboard"}}
+            <li class="nav-item"><a class="nav-link me-2 {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">Hello {{currentUser.name}}</a></li>
+            {{/ifEqual}}
+            {{#ifEqual navigationPath "/profile"}}  
+                <a class="nav-link btn btn-secondary btn-sm" aria-current="page" href="/user/{{user.id}}/editProfile">Edit</a>
+            {{/ifEqual}}
+                <form action="/logout" method="POST">
+                    <button type="submit" class="nav-link btn btn-secondary btn-sm" aria-current="page">Log out</button>
+                </form>
         {{else}}
             <li class="nav-item"><a class="nav-link {{navActive navigationPath '/register'}}" aria-current="page" href="/register">Register</a></li>
             <li class="nav-item"><a class="nav-link {{navActive navigationPath '/login'}}" aria-current="page" href="/login">Login</a></li>
