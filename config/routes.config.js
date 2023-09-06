@@ -14,16 +14,14 @@ router.get('/login', users.login)
 router.post('/login', users.doLogin)
 router.get('/profile', secure.isAuthenticated, users.profile)
 router.post('/user/:id/edit', secure.isAuthenticated, users.edit)
-router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile) 
+router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile)
+router.post('/logout', secure.isAuthenticated, users.logout) 
 
 //like ROUTE
-router.post('/like/:id' , likes.likeUser)
-
-//Books CRUD
+router.post('/like/:id',likes.likeUser)
 
 //home views
 router.get('/dashboard', secure.isAuthenticated, dashboard.showUsers);
-
 router.get('/', (req, res, next) => res.render('landing'))
 
 module.exports = router;
