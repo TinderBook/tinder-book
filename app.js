@@ -26,7 +26,7 @@ app.use(express.static("public"));
 
 app.use((req, res, next) => {
     res.locals.navigationPath = req.path
-    next()
+    next();
 })
 
 
