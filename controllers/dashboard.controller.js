@@ -16,4 +16,5 @@ module.exports.showUsers = (req, res, next) => {
             })
         })
         .catch((error) => next(error))
+        
 }

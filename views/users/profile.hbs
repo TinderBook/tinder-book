@@ -12,13 +12,13 @@
                 <form action="/user/{{user._id}}/edit" method="POST">
                     <div class="mb-3">
                         <label for="description" class="form-label text-muted small"></label>
-                        <textarea name="description" class="form-control" id="description" rows="5">{{user.description}}</textarea>
+                        <textarea name="description" class="form-control " id="description" rows="2">{{user.description}}</textarea>
                         <button type="submit" class="btn btn-secondary mb-2">Status</button>
                     </div>
                 </form>
 
             </div>
-            <hr>
+            {{!-- <hr> --}}
             <h3 class="mb-4">Liked Books:</h3>
             <div class="row">
                 {{#each user.likedBooks as |book|}}

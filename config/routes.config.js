@@ -12,9 +12,10 @@ router.get('/register', users.register)
 router.post('/register', users.doRegister)
 router.get('/login', users.login)
 router.post('/login', users.doLogin)
-router.get('/profile', secure.isAuthenticated, users.profile)
-router.post('/user/:id/edit', secure.isAuthenticated, users.edit)
+router.get('/user/profile', secure.isAuthenticated, users.profile)
+router.post('/user/:id/edit', secure.isAuthenticated, users.editDescription)
 router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile)
+router.post('/user/:id/editProfile', secure.isAuthenticated, users.doEditProfile )
 router.post('/logout', secure.isAuthenticated, users.logout) 
 
 //like ROUTE

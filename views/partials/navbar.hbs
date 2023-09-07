@@ -8,15 +8,15 @@
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         {{#if currentUser}}
-        <li class="nav-item"><a class="nav-link {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">Profile</a></li>
+        <li class="nav-item"><a class="nav-link {{navActive navigationPath '/user/profile'}}" aria-current="page" href="/user/profile">Profile</a></li>
         {{/if}}
       </ul>
       <ul class="navbar-nav">
         {{#if currentUser}}
             {{#ifEqual navigationPath "/dashboard"}}
-            <li class="nav-item"><a class="nav-link me-2 {{navActive navigationPath '/profile'}}" aria-current="page" href="/profile">Hello {{currentUser.name}}</a></li>
+            <li class="nav-item"><a class="nav-link me-2 {{navActive navigationPath '/user/profile'}}" aria-current="page" href="/user/profile">Hello {{currentUser.name}}</a></li>
             {{/ifEqual}}
-            {{#ifEqual navigationPath "/profile"}}  
+            {{#ifEqual navigationPath "/user/profile"}}  
                 <a class="nav-link btn btn-secondary btn-sm" aria-current="page" href="/user/{{user.id}}/editProfile">Edit</a>
             {{/ifEqual}}
                 <form action="/logout" method="POST">

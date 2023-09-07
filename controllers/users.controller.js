@@ -86,19 +86,20 @@ module.exports.doLogin = (req, res, next) => {
 
 module.exports.profile = (req, res, next) => {
     User.findById(req.user)
-        .then()
-        .catch()
-    res.render('users/profile', { user: req.user })
+        .populate('likedBooks')
+        .then( user => {
+            res.render('users/profile', { user: user })
+        })
+        .catch( error => next(error))
 }
 
 
-module.exports.edit = (req, res, next) => {
+module.exports.editDescription = (req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
-        
         description: req.body.description,
     }, { new: true })
     .then(() => {
-        res.redirect('/profile')
+        res.redirect('/user/profile')
     })
     .catch((error) => next(error))
 }
@@ -123,7 +124,49 @@ module.exports.editProfile = (req, res, next) => {
 
 // doEdit profile
 module.exports.doEditProfile = (req, res, next) => {
-    
+
+    User.findOne({username: req.body.username})
+        .then(existingUser => {
+            if(existingUser && String(existingUser._id)  !== String(req.params.id)){
+
+                return Book.find()
+                    .then(books => {
+                        res.render('users/edit', {
+                            user: req.body,
+                            books: books,
+                            errors: {
+                                username: 'username already exists',
+                            }
+                        })
+                    })
+            } else {
+
+                req.body.likedBooks =  typeof req.body.likedBooks === 'string' ? [req.body.likedBooks] : req.body.likedBooks
+
+                let updates = {
+                    username: req.body.username,
+                    description: req.body.description,
+                    likedBooks: req.body.likedBooks
+                };
+                return User.findByIdAndUpdate(req.params.id, updates, {new: true, runValidators:true})
+                    .then(() => res.redirect("/user/profile"));
+            }
+        })
+        .catch(error => {
+            if(error instanceof mongoose.Error.ValidationError){
+                Book.find()
+                 .then(books => {
+                    res.render('users/edit', {
+                        user: req.body,
+                        errors: error.errors,
+                        books: books
+                    });
+                 })
+                 .catch(error => next(error))
+            } else {
+                next(error);
+            }
+        });
 }
 
 
