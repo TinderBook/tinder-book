@@ -13,11 +13,6 @@ const matchSchema = new Schema({
     ref: 'User',
     required: true
   },
-  matchedBook: {
-    type: Schema.Types.ObjectId,
-    ref: 'Book',
-    required: true
-  },
   timestamp: {
     type: Date,
     default: Date.now
