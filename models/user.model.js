@@ -58,6 +58,7 @@ const userSchema = new Schema({
     }],
     validate: [arrayLimit, 'Seleccion exceeds the limit of 4 books']
   },
+  
 
 });
 
