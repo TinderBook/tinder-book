@@ -11,6 +11,11 @@ module.exports.likeUser = (req, res, next) => {
                 return Like.deleteOne({ fromUser: fromUser, toUser: toUser })
             } else {
                 return Like.create({ fromUser: fromUser, toUser: toUser })
+                    .then(like => {
+                        // existe en el otro sentido?
+                            // si existe, creo el match
+                            // redirijo al dashboard con un query param para mostrar un mensajito
+                    })
             }
         })
         .then(() => {

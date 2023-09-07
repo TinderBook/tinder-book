@@ -16,7 +16,15 @@ router.get('/user/profile', secure.isAuthenticated, users.profile)
 router.post('/user/:id/edit', secure.isAuthenticated, users.editDescription)
 router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile)
 router.post('/user/:id/editProfile', secure.isAuthenticated, users.doEditProfile )
-router.post('/logout', secure.isAuthenticated, users.logout) 
+router.post('/logout', secure.isAuthenticated, users.logout)
+
+// GET /matches -> le da todos los matches donde el req.user sea from o to
+// GET matches/<id_match>/messages -> lista los mensajes de ese match
+// POST /matches/<id_match>/messages -> crea mensaje en el match
+// Message
+// text:^String
+// from:^User
+// match:^Match
 
 //like ROUTE
 router.post('/like/:id',likes.likeUser)
