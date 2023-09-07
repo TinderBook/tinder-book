@@ -58,9 +58,15 @@ const userSchema = new Schema({
     }],
     validate: [arrayLimit, 'Seleccion exceeds the limit of 4 books']
   },
-  
-
-});
+  virtuals: {
+    matches: {
+      type: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }]
+    }
+  }
+  });
 
 function arrayLimit(val) {
   return val.length <= 4;
