@@ -1,6 +1,4 @@
 const Match = require('../models/match.model');
-const User = require('../models/user.model');
-const Like = require('../models/like.model');
 
 
 
@@ -12,7 +10,7 @@ module.exports.viewMyMatches = (req, res, next) => {
                 const matchedUsers = matches.map(match => {
                     return match.user1._id.toString() === userId ? match.user2 : match.user1;
                 });
-                res.render('users/my-matches', { users: matchedUsers });
+                res.render('users/my-matches', { matches: matchedUsers });
             })
             .catch(err => next(err));    
     }
