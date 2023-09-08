@@ -4,21 +4,7 @@ const Like = require('../models/like.model');
 
 
 
-module.exports = {
-
-  
-    matches: (req, res, next) => {
-        const userId = req.session.userId;
-        Match.find({ $or: [{ user1: userId }, { user2: userId }] })
-            .populate('user1')
-            .populate('user2')
-            .then(matches => {
-                res.render('matches', { matches });
-            })
-            .catch(err => next(err));
-    },
-
-    viewMyMatches: (req, res, next) => {
+module.exports.viewMyMatches = (req, res, next) => {
         const userId = req.session.userId;
         Match.find({ $or: [{ user1: userId}, { user2: userId }] })
             .populate('user1 user2')
@@ -30,7 +16,5 @@ module.exports = {
             })
             .catch(err => next(err));    
     }
-    
 
-}
 
