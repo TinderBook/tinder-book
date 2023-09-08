@@ -1,14 +1,39 @@
-// vista de matches
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Matches</h1>
-      <ul>
-        {{#each matches}}
-          <li>
-            <a href="/users/{{this._id}}">{{this.name}}</a>
-          </li>
-        {{/each}}
-      </ul>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            {{#if messages.success}}
+            <div class="alert alert-success">{{messages.success}}</div>
+            {{/if}}
+
+            {{#each matches as |match|}}
+            <div class="match-container mb-5">
+                <div class="text-center">
+                    <img src="{{match.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
+                    <h2 class="mt-2">{{match.username}}</h2>
+                    <h5><i>{{match.description}}</i></h5>
+
+                    <!-- Puedes añadir acciones para interactuar con el match, como enviar un mensaje -->
+                </div>
+                <h3 class="mb-4">Liked Books:</h3>
+                <div class="row">
+                    {{#each match.likedBooks as |book|}}
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="{{book.coverImage}}" class="card-img-top w-50 pt-3 mx-auto d-block"
+                                alt="{{book.coverImage}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{book.title}}</h5>
+                                <h5 class="card-text"><strong>Author:</strong> {{book.author}}</h5>
+                                <h5 class="card-text"><strong>Genre:</strong> {{book.genre}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
     </div>
-  </div>
+</div>
