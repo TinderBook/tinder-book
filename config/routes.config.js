@@ -3,7 +3,8 @@ const router = express.Router();
 const secure = require('../middlewares/secure.mid')
 
 const users = require('../controllers/users.controller')
-const likes = require('../controllers/likes.controller')    
+const likes = require('../controllers/likes.controller')  
+const matchController = require('../controllers/match.controller')
 
 const dashboard = require('../controllers/dashboard.controller')
 
@@ -30,6 +31,9 @@ router.post('/logout', secure.isAuthenticated, users.logout)
 
 //like ROUTE
 router.post('/like/:id',likes.likeUser)
+
+//My-matches
+router.get('/users/my-matches', secure.isAuthenticated, matchController.viewMyMatches)
 
 //home views
 router.get('/dashboard', secure.isAuthenticated, dashboard.showUsers);

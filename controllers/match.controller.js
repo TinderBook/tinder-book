@@ -48,6 +48,15 @@ module.exports = {
             .catch(err => next(err));
     },
 
+    viewMyMatches: (req, res, next) => {
+        const userId = req.session.userId;
+        Match.find({ $or: [{ user1: userId}, { user2: userId }] })
+            .populate('user1 user2')
+    
+        .then(matches => {
+            res.render('users/my-matches', { matches });
+        })
+        .catch(err => next(err));    }
 
 }
 
