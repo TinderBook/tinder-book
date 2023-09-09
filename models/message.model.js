@@ -11,15 +11,13 @@ const messageSchema = new mongoose.Schema({
         required: true,
         maxlength: 500
     },
-    timestamp: {
-        type: Date,
-        default: Date.now
-    },
     match: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Match',
         required: true
     }
+}, {
+    timestamps: true
 })
 
 const Message = mongoose.model('Message', messageSchema)

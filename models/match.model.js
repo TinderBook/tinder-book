@@ -17,8 +17,6 @@ const matchSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  
-
 });
 
 const Match = mongoose.model('Match', matchSchema);
