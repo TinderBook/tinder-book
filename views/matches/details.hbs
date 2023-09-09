@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        
+      
+      <div class="user-details">
+        <img src="{{otherUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
+        <h2 class="mt-2">{{otherUser.username}}</h2>
+
+    </div>
+
+    
+    
+    <div class="messages-container p-3 mb-4 border rounded overflow-auto">
+        {{#each match.messages}}
+            {{#ifEqual this.sender._id currentUser._id}}
+                <div class="message mb-3 text-right"> 
+            {{else}}
+                <div class="message mb-3"> 
+            {{/ifEqual}}
+                <p class="mb-1">{{this.content}}</p>
+                <small class="text-muted">Enviado por: {{this.sender.username}}</small>
+            </div>
+        {{/each}}
+    </div>
+
+
+
+    <div class="message-form">
+        <form action="/matches/{{match._id}}/messages" method="POST">
+            <textarea name="content" rows="4" cols="50"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

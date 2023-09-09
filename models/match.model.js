@@ -1,4 +1,6 @@
 
+require('./message.model')
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -19,6 +21,18 @@ const matchSchema = new Schema({
   },
 });
 
+matchSchema.virtual('messages', {
+
+  ref: "Messages",
+  localField: "_id",
+  foreignField: "match",
+  justOne: false,
+
+})
+
+
 const Match = mongoose.model('Match', matchSchema);
+
+
 
 module.exports = Match;

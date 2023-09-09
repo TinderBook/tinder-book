@@ -8,10 +8,9 @@ hbs.registerHelper('navActive', (navigationPath, expectedPath, options) => {
 
 hbs.registerHelper('ifEqual', function (val1, val2, options) {
     if (val1 === val2) {
-        return options.fn(this);  // Ejecuta y devuelve el contenido dentro del bloque {{#ifEqual}}...{{/ifEqual}}
+        return options.fn(this);  
     } else {
-        return options.inverse(this);  // Ejecuta y devuelve el contenido dentro de un eventual bloque {{else}} que esté después de {{#ifEqual}}
+        return options.inverse(this);  
     }
 });
-
 
