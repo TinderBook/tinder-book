@@ -1,0 +1,28 @@
+.messages-container {
+    height: 400px; /* o cualquier otro valor que desees */
+    overflow-y: auto; /* permite el desplazamiento vertical cuando el contenido excede la altura */
+    border: 1px solid #ccc; /* esto es opcional, solo para visualizar el área del contenedor */     
+    
+  
+}
+
+.message.sent {
+    background-color: #3c738c;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #976060;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    align-self: flex-start;
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+}
