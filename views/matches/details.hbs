@@ -1,4 +1,3 @@
-
 <script src="/js/scripts.js"></script>
 
 
@@ -7,29 +6,40 @@
     <div class="col-md-8">
 
 
-      <div class="user-details">
-        <img src="{{currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
-        <h2 class="mt-2">{{currentUser.username}}</h2>
-
-      </div>
-
-
-
-    <div class="messages-container p-3 mb-4 border rounded overflow-auto">
-   {{#each match.messages}}
-    {{#ifEqual this.sender._id ../currentUser._id}}
-        <div class="message sent">
-        <p class="mb-1">{{this.content}}</p>
-        <small class="text-muted">Enviado por: {{this.sender.username}}</small>
-    {{else}}
-        <div class="message received">
-        <p class="mb-1">{{this.content}}</p>
-        <small class="text-muted">Recibido de: {{this.sender.username}}</small>
-    {{/ifEqual}}
-        </div>
-{{/each}}
-
+     <div class="conversation-start">
+    <div class="user-images">
+        <img src="{{currentUser.avatarUrl}}" alt="Avatar del usuario actual" class="rounded-circle" width="100">
+        <img src="{{otherUser.avatarUrl}}" alt="Avatar del otro usuario" class="rounded-circle" width="100">
+    </div>
+    <h2 class="mt-2">¡Es el comienzo de una nueva conversación!</h2>
+    <p>Estás chateando con {{otherUser.username}}. Esperamos que tengan una charla amena.</p>
 </div>
+
+
+
+      <div class="messages-container p-3 mb-4 border rounded overflow-auto">
+
+        {{#each match.messages}}
+        
+{{log currentUser}}
+
+
+        {{#ifEqual this.sender._id ../currentUser._id}}
+       
+        <div class="message sent">
+           <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+          <p class="mb-1">{{this.content}}</p>
+          <small class="text-muted">Enviado por: {{this.sender.username}}</small>
+          {{else}}
+          <div class="message received">
+            <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+            <p class="mb-1">{{this.content}}</p>
+            <small class="text-muted">Recibido de: {{this.sender.username}}</small>
+            {{/ifEqual}}
+          </div>
+          {{/each}}
+
+        </div>
 
         <div class="message-form">
           <form action="/matches/{{match._id}}/messages" method="POST">
