@@ -2,8 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const logger = require('morgan')
-const flash = require('connect-flash')
+const logger = require('morgan');
+const flash = require('connect-flash');
+const notificationsMiddleware = require('./middlewares/notifications.middleware').notifications;
+
+
 
 //connect mongo
 require('./config/db.config')
@@ -24,8 +27,11 @@ app.use(logger('dev'))
 //config session archivo y sus middlewares 
 const sessionConfig = require('./config/session.config');
 app.use(sessionConfig.session);
-app.use(sessionConfig.loadSessionUser)
+app.use(sessionConfig.loadSessionUser);
+app.use(notificationsMiddleware);
 app.use(flash());
+
+
 
 //Configure static fields
 app.use(express.static("public"));

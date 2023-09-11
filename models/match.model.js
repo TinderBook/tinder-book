@@ -19,6 +19,10 @@ const matchSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  notified: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 matchSchema.virtual('messages', {

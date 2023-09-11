@@ -11,6 +11,10 @@ const messageSchema = new mongoose.Schema({
       type: Schema.Types.ObjectId,
       ref: 'Match'
     },
+    isRead: {
+      type: Boolean,
+      default: false  
+    },
     timestamp: {
         type: Date,
         default: Date.now
