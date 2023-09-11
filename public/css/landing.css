@@ -1,0 +1,39 @@
+/* Base del contenedor del carrusel */
+.carousel-inner {
+    height: calc(100vh - 80px);
+    width: 100%;    
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para los items del carrusel */
+.carousel-item {
+    height: 100%;
+    position: relative;
+    color: #403232; /* Color base de texto para el ítem del carrusel */
+    background-color: #bcbcbd;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Estilo para las imágenes dentro del carrusel */
+.carousel-inner img {
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para las leyendas/captions del carrusel */
+.carousel-caption h5, 
+.carousel-caption p {
+    color: #a0a0a2;
+    font-style: italic; /* Estilo de cita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+    padding: 5px 10px; 
+    border-radius: 5px; 
+}

@@ -1,7 +1,7 @@
 .messages-container {
-    height: 400px; /* o cualquier otro valor que desees */
-    overflow-y: auto; /* permite el desplazamiento vertical cuando el contenido excede la altura */
-    border: 1px solid #ccc; /* esto es opcional, solo para visualizar el área del contenedor */     
+    height: 400px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc;  
     
   
 }
