@@ -132,7 +132,8 @@
     {
         "title": "Los juegos del hambre",
         "author": "Suzanne Collins",
-        "genre": "Distopía"
+        "genre": "Distopía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694539885/zf7goljoxmlcwa9djdow.jpg"
     },
     {
         "title": "Lo que el viento se llevó",
@@ -152,7 +153,8 @@
     {
         "title": "Los hombres que no amaban a las mujeres",
         "author": "Stieg Larsson",
-        "genre": "Misterio"
+        "genre": "Misterio",
+        "coverImage": ""
     },
     {
         "title": "El código Da Vinci",

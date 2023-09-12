@@ -14,3 +14,5 @@ hbs.registerHelper('ifEqual', function (val1, val2, options) {
         return options.inverse(this);  
     }
 });
+
+hbs.registerHelper('eq', (v1, v2) => v1 === v2);

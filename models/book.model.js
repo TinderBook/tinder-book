@@ -20,8 +20,16 @@ const bookSchema = new Schema({
     coverImage: {
         type: String, // Esto se asume que es una URL.
         trim: true,
-        default: function(){
-            return `https://via.placeholder.com/150x200?text=Libro`
+        default: 'https://via.placeholder.com/150x200?text=Libro',
+        validate: {
+            validator: function(url) {
+                try {
+                    new URL(url);
+                    return true;
+                } catch(error) {
+                    return false;
+                }
+            }
         }
     }
 });

@@ -4,43 +4,74 @@
         <div class="card">
             <div class="card-body">
                 <form action="/register" method="POST">
-                                        {{!--NAME--}}
+                    {{!--NAME--}}
                     <div class="input-group mb-2">
                         <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
-                        <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}" placeholder="name" aria-label="Name" value="{{user.name}}">
+                        <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}"
+                            placeholder="name" aria-label="Name" value="{{user.name}}">
                         {{#if errors.name}}<div class="invalid-feedback fs-6">{{errors.name}}</div>{{/if}}
                     </div>
 
-                                     {{!--email--}}
+                    {{!--date of birth--}}
+                    <div class="input-group mb-2">
+                        <span class="input-group-text"><i class="fa fa-fw fa-calendar"></i></span>
+                        <input type="date" name="dateOfBirth"
+                            class="form-control {{#if errors.dateOfBirth}} is-invalid {{/if}}"
+                            placeholder="Date of Birth" aria-label="Date of Birth" value="{{user.dateOfBirth}}">
+                        {{#if errors.dateOfBirth}}<div class="invalid-feedback fs-6">{{errors.dateOfBirth}}</div>{{/if}}
+                    </div>
+
+                    {{!--gender--}}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-fw fa-venus-mars"></i></span>
+                        <select name="gender" class="form-select {{#if errors.gender}} is-invalid {{/if}}">
+                            <option value="" disabled {{#unless user.gender}}selected{{/unless}}>Select your gender
+                            </option>
+                            <option value="male" {{#if (eq user.gender "male" )}}selected{{/if}}>Male</option>
+                            <option value="female" {{#if (eq user.gender "female" )}}selected{{/if}}>Female</option>
+                        </select>
+                        {{#if errors.gender}} <div class="invalid-feedback fs-6">{{errors.gender}}</div>{{/if}}
+                    </div>
+
+
+
+                    {{!--email--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
-                        <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}" placeholder="email" aria-label="Name" value="{{user.email}}">
+                        <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}"
+                            placeholder="email" aria-label="Name" value="{{user.email}}">
                         {{#if errors.email}}<div class="invalid-feedback fs-6">{{errors.email}}</div>{{/if}}
                     </div>
 
-                                    {{!--username--}}
+                    {{!--username--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
-                        <input type="text" name="username" class="form-control {{#if errors.username}} is-invalid {{/if}}" placeholder="username" aria-label="Name" value="{{user.username}}">
+                        <input type="text" name="username"
+                            class="form-control {{#if errors.username}} is-invalid {{/if}}" placeholder="username"
+                            aria-label="Name" value="{{user.username}}">
                         {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
                     </div>
 
-                                        {{!--password--}}
+                    {{!--password--}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                        <input type="text" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password" aria-label="Name">
+                        <input type="text" name="password"
+                            class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password"
+                            aria-label="Name">
                         {{#if errors.password}}<div class="invalid-feedback fs-6">{{errors.password}}</div>{{/if}}
                     </div>
-                                    {{!-- edit books  --}}
+                    {{!-- edit books --}}
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-fw fa-book">Books</i></span>
-                        <select name="likedBooks" multiple class="form-select {{#if errors.likedBooks}} is-invalid {{/if}}">
+                        <select name="likedBooks" multiple
+                            class="form-select {{#if errors.likedBooks}} is-invalid {{/if}}">
                             <option selected>Select at least 4 books:</option>
                             {{#each books as |book|}}
-                                <option value="{{book.id}}">{{book.title}}</option>
+                            <option value="{{book.id}}">{{book.title}}</option>
                             {{/each}}
                         </select>
-                        {{#if errors.likedBooks}} <div class="invalid-feedback fs-6">{{errors.likedBooks.message}}</div>{{/if}}
+                        {{#if errors.likedBooks}} <div class="invalid-feedback fs-6">{{errors.likedBooks.message}}</div>
+                        {{/if}}
                     </div>
 
                     <div class="d-grid gap-3 mt-2">
