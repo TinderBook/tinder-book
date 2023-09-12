@@ -9,7 +9,7 @@ require('../config/db.config')
 
 
 mongoose.connection
-    .dropCollection("books")
+    .dropDatabase("books")
     .then(() => {
         Book.create(booksData)
     })

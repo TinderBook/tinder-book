@@ -2,7 +2,8 @@
     {
         "title": "El señor de los anillos",
         "author": "J.R.R Tolkien",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage":"https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541553/Cover%20Images/obvyjn4dcsviz1uxigju.jpg"
     },
     {
         "title": "La torre oscura",
@@ -132,8 +133,8 @@
     {
         "title": "Los juegos del hambre",
         "author": "Suzanne Collins",
-        "genre": "Distopía",
-        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694539885/zf7goljoxmlcwa9djdow.jpg"
+        "genre": "Distopía"
+        
     },
     {
         "title": "Lo que el viento se llevó",
