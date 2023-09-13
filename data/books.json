@@ -8,233 +8,279 @@
     {
         "title": "La torre oscura",
         "author": "Stephen King",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541693/Cover%20Images/veij8hzaeuavrfb4mghb.jpg"
     },
     {
         "title": "Fundación",
         "author": "Isaac Asimov",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541750/Cover%20Images/z2prlclnw2enmkingcik.jpg"
+
     },
     {
         "title": "Los pilares de la tierra",
         "author": "Ken Follet",
-        "genre": "Historia"
+        "genre": "Historia",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541784/Cover%20Images/edxdhm8xm24sgoumntha.jpg"
     },
     {
         "title": "La canción de cazarrabo",
         "author": "Tad Williams",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541814/Cover%20Images/fuf1zilecikpfgoxefuk.jpg"
     },
     {
         "title": "Orgullo y prejuicio",
         "author": "Jane Austen",
-        "genre": "Romance"
+        "genre": "Romance",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541850/Cover%20Images/sbdeofvj2lsigc0ek2st.jpg"
     },
     {
         "title": "1984",
         "author": "George Orwell",
-        "genre": "Distopía"
+        "genre": "Distopía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541935/Cover%20Images/rtmo6akvthmpjci2y3yt.jpg"
     },
     {
         "title": "Cien años de soledad",
         "author": "Gabriel García Márquez",
-        "genre": "Realismo mágico"
+        "genre": "Realismo mágico",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541961/Cover%20Images/jqoradxqw7ximo8xhkvh.jpg"
     },
     {
         "title": "Moby Dick",
         "author": "Herman Melville",
-        "genre": "Aventura"
+        "genre": "Aventura",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694541993/Cover%20Images/qb6hxw59dep2o6wkkssa.jpg"
     },
     {
         "title": "El gran Gatsby",
         "author": "F. Scott Fitzgerald",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542023/Cover%20Images/pqlonardhkhrccp1dsql.jpg"
     },
     {
         "title": "Frankenstein",
         "author": "Mary Shelley",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542052/Cover%20Images/xetnxzsm5ipsebw66shq.jpg"
     },
     {
         "title": "Las aventuras de Sherlock Holmes",
         "author": "Arthur Conan Doyle",
-        "genre": "Misterio"
+        "genre": "Misterio",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542149/Cover%20Images/fnvhqw8tnwcsfc4uf3ob.jpg"
     },
     {
         "title": "Fahrenheit 451",
         "author": "Ray Bradbury",
-        "genre": "Distopía"
+        "genre": "Distopía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542177/Cover%20Images/da2pi3mouo2k9fmusggj.jpg"
     },
     {
         "title": "Un mundo feliz",
         "author": "Aldous Huxley",
-        "genre": "Distopía"
+        "genre": "Distopía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542197/Cover%20Images/s1h219fbmx8qrm0xvrff.jpg"
     },
     {
         "title": "Drácula",
         "author": "Bram Stoker",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542215/Cover%20Images/osbdtn3srpah4ezif7pa.jpg"
     },
     {
         "title": "Dune",
         "author": "Frank Herbert",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542215/Cover%20Images/osbdtn3srpah4ezif7pa.jpg"
     },
     {
         "title": "El conde de Montecristo",
         "author": "Alexandre Dumas",
-        "genre": "Aventura"
+        "genre": "Aventura",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542295/Cover%20Images/nlvl4tqhzhk43ruvecgc.jpg"
     },
     {
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "genre": "Aventura"
+        "genre": "Aventura",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542319/Cover%20Images/loamf2lq1lvyu2xaed6p.jpg"
     },
     {
         "title": "Viaje al centro de la tierra",
         "author": "Jules Verne",
-        "genre": "Aventura"
+        "genre": "Aventura",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542337/Cover%20Images/advziri8r8dlvfhj1b5b.jpg"
     },
     {
         "title": "La guerra de los mundos",
         "author": "H.G. Wells",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542356/Cover%20Images/tbbnc3oahnrvldcy0z9t.jpg"
     },
     {
         "title": "Crimen y castigo",
         "author": "Fyodor Dostoevsky",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542356/Cover%20Images/tbbnc3oahnrvldcy0z9t.jpg"
     },
     {
         "title": "Los miserables",
         "author": "Victor Hugo",
-        "genre": "Historia"
+        "genre": "Historia",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542393/Cover%20Images/ntvo71altdw4k0gn2pfc.jpg"
     },
     {
         "title": "Rebelión en la granja",
         "author": "George Orwell",
-        "genre": "Satírica"
+        "genre": "Satírica",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542410/Cover%20Images/zraatpvrqd07hzvukmll.jpg"
     },
     {
         "title": "Jane Eyre",
         "author": "Charlotte Bronte",
-        "genre": "Romance"
+        "genre": "Romance",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542428/Cover%20Images/q1jrnidhs1varsx4f8ex.jpg"
     },
     {
         "title": "El resplandor",
         "author": "Stephen King",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542428/Cover%20Images/q1jrnidhs1varsx4f8ex.jpg"
     },
     {
         "title": "El juego de Ender",
         "author": "Orson Scott Card",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542472/Cover%20Images/duqu2axp3tvx6dt3dbyl.jpg"
     },
     {
         "title": "Los juegos del hambre",
         "author": "Suzanne Collins",
-        "genre": "Distopía"
+        "genre": "Distopía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542491/Cover%20Images/gdlxx62dboudns0otqol.jpg"
         
     },
     {
         "title": "Lo que el viento se llevó",
         "author": "Margaret Mitchell",
-        "genre": "Historia"
+        "genre": "Historia",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542516/Cover%20Images/hs4i3suq88m29ege6zcq.jpg"
     },
     {
         "title": "Las crónicas de Narnia",
         "author": "C.S. Lewis",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage" : "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542547/Cover%20Images/hyvwe309p0q0wmnc3lgy.jpg"
     },
     {
         "title": "El nombre del viento",
         "author": "Patrick Rothfuss",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542569/Cover%20Images/egzw1sw9umt7ifgffquc.jpg"
     },
     {
         "title": "Los hombres que no amaban a las mujeres",
         "author": "Stieg Larsson",
         "genre": "Misterio",
-        "coverImage": ""
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542588/Cover%20Images/hqfnrl0l0r8iiqpm09ff.jpg"
     },
     {
         "title": "El código Da Vinci",
         "author": "Dan Brown",
-        "genre": "Thriller"
+        "genre": "Thriller",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542610/Cover%20Images/mcy2ugbgz3aasnzas7p7.jpg"
     },
     {
         "title": "El hobbit",
         "author": "J.R.R Tolkien",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542649/Cover%20Images/ugg4djge4k0tdql80ysd.jpg"
     },
     {
         "title": "La chica del tren",
         "author": "Paula Hawkins",
-        "genre": "Thriller"
+        "genre": "Thriller",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542667/Cover%20Images/eyzjziihiern2lqti1ka.jpg"
     },
     {
         "title": "Los pájaros y otros relatos",
         "author": "Daphne du Maurier",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542693/Cover%20Images/ms2h3evmlassumyk5kaq.jpg"
     },
     {
         "title": "En el camino",
         "author": "Jack Kerouac",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage" : "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542741/Cover%20Images/bgphnsgclrccrpr4r4dv.jpg"
     },
     {
         "title": "Cumbres borrascosas",
         "author": "Emily Bronte",
-        "genre": "Romance"
+        "genre": "Romance",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542769/Cover%20Images/nxixpqykzvy2hyrvebwy.jpg"
     },
     {
         "title": "Soy leyenda",
         "author": "Richard Matheson",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542799/Cover%20Images/zwsyk1hk2a2y9dbmrv9k.jpg"
     },
     {
         "title": "Un lugar llamado libertad",
         "author": "Ken Follet",
-        "genre": "Historia"
+        "genre": "Historia",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542799/Cover%20Images/zwsyk1hk2a2y9dbmrv9k.jpg"
     },
     {
         "title": "Guía del autoestopista galáctico",
         "author": "Douglas Adams",
-        "genre": "Ciencia ficción"
+        "genre": "Ciencia ficción",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542854/Cover%20Images/bbwxzn0fc6cbnqfxsmrm.jpg"
     },
     {
         "title": "La ladrona de libros",
         "author": "Markus Zusak",
-        "genre": "Historia"
+        "genre": "Historia",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542854/Cover%20Images/bbwxzn0fc6cbnqfxsmrm.jpg"
     },
     {
         "title": "Entrevista con el vampiro",
         "author": "Anne Rice",
-        "genre": "Terror"
+        "genre": "Terror",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542905/Cover%20Images/ug6a0htlwcojad0zker6.jpg"
     },
     {
         "title": "Alas negras",
         "author": "Laura Gallego García",
-        "genre": "Fantasía"
+        "genre": "Fantasía",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542922/Cover%20Images/icyaxgfhuk2q0jqvdtt2.jpg"
     },
     {
         "title": "El silencio de los corderos",
         "author": "Thomas Harris",
-        "genre": "Thriller"
+        "genre": "Thriller",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542937/Cover%20Images/e2jffapxt6lxyzhro9ap.jpg"
     },
     {
         "title": "El viejo y el mar",
         "author": "Ernest Hemingway",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542937/Cover%20Images/e2jffapxt6lxyzhro9ap.jpg"
     },
     {
         "title": "Mujercitas",
         "author": "Louisa May Alcott",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542977/Cover%20Images/wzuunw2f6x4pcoqfl2n2.jpg"
     },
     {
         "title": "El retrato de Dorian Gray",
         "author": "Oscar Wilde",
-        "genre": "Ficción literaria"
+        "genre": "Ficción literaria",
+        "coverImage": "https://res.cloudinary.com/dcqn5bhxe/image/upload/v1694542998/Cover%20Images/lmg6jndfkgpyhbhoayhb.jpg"
     }
 ]
