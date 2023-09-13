@@ -1,107 +1,107 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <div class="row justify-content-center">
-    <div class="col-12 col-md-4">
-        <h1 class="mb-3">Register</h1>
-        <div class="card">
-            <div class="card-body">
-                <form action="/register" method="POST">
-                    {{!--NAME--}}
-                    <div class="input-group mb-2">
-                        <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
-                        <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}"
-                            placeholder="name" aria-label="Name" value="{{user.name}}">
-                        {{#if errors.name}}<div class="invalid-feedback fs-6">{{errors.name}}</div>{{/if}}
+  <div class="col-12 col-md-4">
+    <h1 class="mb-3">Register</h1>
+    <div class="card">
+      <div class="card-body">
+        <form action="/register" method="POST">
+            {{!--NAME--}}
+          <div class="input-group mb-2">
+              <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
+              <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}"
+                placeholder="name" aria-label="Name" value="{{user.name}}">
+              {{#if errors.name}}<div class="invalid-feedback fs-6">{{errors.name}}</div>{{/if}}
+          </div>
+
+          {{!--date of birth--}}
+          <div class="input-group mb-2">
+              <span class="input-group-text"><i class="fa fa-fw fa-calendar"></i></span>
+              <input type="date" name="dateOfBirth"
+                class="form-control {{#if errors.dateOfBirth}} is-invalid {{/if}}"
+                placeholder="Date of Birth" aria-label="Date of Birth" value="{{user.dateOfBirth}}">
+              {{#if errors.dateOfBirth}}<div class="invalid-feedback fs-6">{{errors.dateOfBirth}}</div>{{/if}}
+          </div>
+
+          {{!--gender--}}
+          <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-fw fa-venus-mars"></i></span>
+              <select name="gender" class="form-select {{#if errors.gender}} is-invalid {{/if}}">
+                <option value="" disabled {{#unless user.gender}}selected{{/unless}}>Select your gender
+                </option>
+                <option value="male" {{#if (eq user.gender "male" )}}selected{{/if}}>Male</option>
+                <option value="female" {{#if (eq user.gender "female" )}}selected{{/if}}>Female</option>
+              </select>
+              {{#if errors.gender}} <div class="invalid-feedback fs-6">{{errors.gender}}</div>{{/if}}
+          </div>
+
+
+
+          {{!--email--}}
+          <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
+              <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}"
+                placeholder="email" aria-label="Name" value="{{user.email}}">
+              {{#if errors.email}}<div class="invalid-feedback fs-6">{{errors.email}}</div>{{/if}}
+          </div>
+
+          {{!--username--}}
+          <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
+              <input type="text" name="username"
+                class="form-control {{#if errors.username}} is-invalid {{/if}}" placeholder="username"
+                aria-label="Name" value="{{user.username}}">
+              {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
+          </div>
+
+          {{!--password--}}
+          <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
+              <input type="text" name="password"
+                class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password"
+                aria-label="Name">
+              {{#if errors.password}}<div class="invalid-feedback fs-6">{{errors.password}}</div>{{/if}}
+          </div>
+          {{!-- edit books --}}
+          <div id="booksCarousel" class="carousel slide mb-2">
+            <div class="carousel-inner">
+
+              {{#each books as |book|}}
+              <div class="carousel-item {{#if @first}}active{{/if}}">
+                <img src="{{book.coverImage}}" class="d-block w-100" alt="{{book.title}}">
+
+                <div class="carousel-caption d-none d-md-block">
+                      <!-- Casilla de verificación para seleccionar el libro -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" name="likedBooks"
+                        value="{{book.id}}" id="book-{{book.id}}">
+                      <label class="form-check-label" for="book-{{book.id}}">Select</label>
                     </div>
+                </div>
+              </div>
+              {{/each}}
 
-                    {{!--date of birth--}}
-                    <div class="input-group mb-2">
-                        <span class="input-group-text"><i class="fa fa-fw fa-calendar"></i></span>
-                        <input type="date" name="dateOfBirth"
-                            class="form-control {{#if errors.dateOfBirth}} is-invalid {{/if}}"
-                            placeholder="Date of Birth" aria-label="Date of Birth" value="{{user.dateOfBirth}}">
-                        {{#if errors.dateOfBirth}}<div class="invalid-feedback fs-6">{{errors.dateOfBirth}}</div>{{/if}}
-                    </div>
-
-                    {{!--gender--}}
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa fa-fw fa-venus-mars"></i></span>
-                        <select name="gender" class="form-select {{#if errors.gender}} is-invalid {{/if}}">
-                            <option value="" disabled {{#unless user.gender}}selected{{/unless}}>Select your gender
-                            </option>
-                            <option value="male" {{#if (eq user.gender "male" )}}selected{{/if}}>Male</option>
-                            <option value="female" {{#if (eq user.gender "female" )}}selected{{/if}}>Female</option>
-                        </select>
-                        {{#if errors.gender}} <div class="invalid-feedback fs-6">{{errors.gender}}</div>{{/if}}
-                    </div>
-
-
-
-                    {{!--email--}}
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
-                        <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}"
-                            placeholder="email" aria-label="Name" value="{{user.email}}">
-                        {{#if errors.email}}<div class="invalid-feedback fs-6">{{errors.email}}</div>{{/if}}
-                    </div>
-
-                    {{!--username--}}
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
-                        <input type="text" name="username"
-                            class="form-control {{#if errors.username}} is-invalid {{/if}}" placeholder="username"
-                            aria-label="Name" value="{{user.username}}">
-                        {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
-                    </div>
-
-                    {{!--password--}}
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                        <input type="text" name="password"
-                            class="form-control {{#if errors.password}} is-invalid {{/if}}" placeholder="password"
-                            aria-label="Name">
-                        {{#if errors.password}}<div class="invalid-feedback fs-6">{{errors.password}}</div>{{/if}}
-                    </div>
-                    {{!-- edit books --}}
-                    <div id="booksCarousel" class="carousel slide mb-2">
-                        <div class="carousel-inner">
-
-                            {{#each books as |book|}}
-                            <div class="carousel-item {{#if @first}}active{{/if}}">
-                                <img src="{{book.coverImage}}" class="d-block w-100" alt="{{book.title}}">
-
-                                <div class="carousel-caption d-none d-md-block">
-                                     <!-- Casilla de verificación para seleccionar el libro -->
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="likedBooks"
-                                            value="{{book.id}}" id="book-{{book.id}}">
-                                        <label class="form-check-label" for="book-{{book.id}}">Select</label>
-                                    </div>
-                                </div>
-                            </div>
-                            {{/each}}
-
-                        </div>
-
-                        <!-- Controles del carrusel (opcional) -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#booksCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#booksCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-
-                    <div class="d-grid gap-3 mt-2">
-                        <button class="btn btn-primary">Register</button>
-                    </div>
-                </form>
             </div>
-        </div>
+
+            <!-- Controles del carrusel (opcional) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#booksCarousel"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#booksCarousel"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+          <div class="d-grid gap-3 mt-2">
+            <button class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

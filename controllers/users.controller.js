@@ -162,6 +162,7 @@ module.exports.doEditProfile = (req, res, next) => {
                 req.body.likedBooks = typeof req.body.likedBooks === 'string' ? [req.body.likedBooks] : req.body.likedBooks
 
                 let updates = {
+                    avatarUrl: req.file.path,
                     username: req.body.username,
                     description: req.body.description,
                     likedBooks: req.body.likedBooks

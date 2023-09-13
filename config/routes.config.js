@@ -7,7 +7,8 @@ const likes = require('../controllers/likes.controller')
 const messages = require('../controllers/messages.controllers') 
 const matchController = require('../controllers/match.controller')
 
-
+//multer-cloudinary
+const upload = require('./multer.config')
 
 const dashboard = require('../controllers/dashboard.controller')
 
@@ -19,7 +20,7 @@ router.post('/login', users.doLogin)
 router.get('/user/profile', secure.isAuthenticated, users.profile)
 router.post('/user/:id/edit', secure.isAuthenticated, users.editDescription)
 router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile)
-router.post('/user/:id/editProfile', secure.isAuthenticated, users.doEditProfile )
+router.post('/user/:id/editProfile', secure.isAuthenticated,upload.single('image'), users.doEditProfile )
 router.post('/logout', secure.isAuthenticated, users.logout)
 
 //like ROUTE
