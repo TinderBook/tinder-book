@@ -58,16 +58,14 @@
 
         </div>
 
-         <div class="mt-2">
-              <form action="/matches/{{match._id}}/messages" method="POST" class="">
-                <textarea name="content" rows="4" cols="50" class="form-control mr-2" style="flex: 1;"></textarea>
+        <div class="mt-2">
+            <form action="/matches/{{match._id}}/messages" method="POST" style="display: flex;">
+                <textarea name="content" rows="4" class="form-control" style="flex-grow: 1; margin-right: 1rem;"></textarea> <!-- Añade el margen aquí -->
                 <button type="submit" class="btn btn-primary mt-2">Enviar</button>
-              </form>
-            </div>
+            </form>
+        </div>
       </div>
     </div>
-
-
   </div>
 
   
