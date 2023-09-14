@@ -1,39 +1,56 @@
-<script src="/js/scripts.js"></script>
 
+<script src="/js/scripts.js"></script>
 
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
 
+    <style>
+      .sender-name {
+              font-size: 0.9rem; 
+              margin-left: 0.5rem;
+              flex-shrink: 0;  /* Asegúrate de que el nombre no se reduzca */
+          }
+      .messages-container {
+              height: 800px; 
+              overflow-y: auto;
+          }    
+      .message, .message-content {
+              max-width: 80%;  /* Establece un ancho máximo. Puedes ajustar este valor según tus necesidades. */
+          }    
+      .message-size {
+              font-size: 1.5rem;
+          }
+    </style>  
+
 
      <div class="conversation-start">
-    <div class="user-images">
-        <img src="{{currentUser.avatarUrl}}" alt="Avatar del usuario actual" class="rounded-circle" width="100">
-        <img src="{{otherUser.avatarUrl}}" alt="Avatar del otro usuario" class="rounded-circle" width="100">
-    </div>
-    <h2 class="mt-2">¡Es el comienzo de una nueva conversación!</h2>
-    <p>Estás chateando con {{otherUser.username}}. Esperamos que tengan una charla amena.</p>
-</div>
-
-
 
       <div class="messages-container p-3 mb-4 border rounded overflow-auto">
+        <div id="conversation-start" class="mb-5 p-3 rounded text-center" style="background-color: #f8f9fa;">
+          <div class="user-images">
+            <img src="{{currentUser.avatarUrl}}" alt="Avatar del usuario actual" class="rounded-circle" width="100">
+            <img src="{{otherUser.avatarUrl}}" alt="Avatar del otro usuario" class="rounded-circle" width="100">
+          </div>
+          <h2 class="mt-2">¡Es el comienzo de una nueva conversación!</h2>
+          <p>Estás chateando con {{otherUser.username}}. Esperamos que tengan una charla amena.</p>
+        </div>  
+         
+      
+      
 
         {{#each match.messages}}
-        
-{{log currentUser}}
-
 
         {{#ifEqual this.sender._id ../currentUser._id}}
        
         <div class="message sent">
            <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
-          <p class="mb-1">{{this.content}}</p>
+          <p class="mb-1 message-size">{{this.content}}</p>
           <small class="text-muted">Enviado por: {{this.sender.username}}</small>
           {{else}}
           <div class="message received">
             <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
-            <p class="mb-1">{{this.content}}</p>
+            <p class="mb-1 message-size">{{this.content}}</p>
             <small class="text-muted">Recibido de: {{this.sender.username}}</small>
             {{/ifEqual}}
           </div>
@@ -41,14 +58,16 @@
 
         </div>
 
-        <div class="message-form">
-          <form action="/matches/{{match._id}}/messages" method="POST">
-            <textarea name="content" rows="4" cols="50"></textarea>
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
+         <div class="mt-2">
+              <form action="/matches/{{match._id}}/messages" method="POST" class="">
+                <textarea name="content" rows="4" cols="50" class="form-control mr-2" style="flex: 1;"></textarea>
+                <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+              </form>
+            </div>
       </div>
     </div>
 
 
   </div>
+
+  

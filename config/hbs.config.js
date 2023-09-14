@@ -15,4 +15,12 @@ hbs.registerHelper('ifEqual', function (val1, val2, options) {
     }
 });
 
+hbs.registerHelper('ifUser', function (val1, val2, options) {
+    if (val1.toString() === val2.toString()) {
+        return options.fn(this);  
+    } else {
+        return options.inverse(this);  
+    }
+});
+
 hbs.registerHelper('eq', (v1, v2) => v1 === v2);
