@@ -1,0 +1,144 @@
+h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    /* Puedes cambiar este color por el que desees. */
+    text-shadow: 2px 2px 4px rgba(0, 0,
+            0, 0.2);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Contenedor general del formulario */
+
+
+/* Estilos generales de los campos de entrada y select */
+.form-control,
+.form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Estilos para los íconos dentro de los campos de entrada */
+.input-group-text {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px 0 0 5px;
+}
+
+/* Personalización del feedback inválido */
+.invalid-feedback {
+    font-size: 0.875rem;
+    margin-top: 2px;
+}
+
+/* Cambia el color de los íconos cuando el campo de entrada es inválido */
+.input-group .is-invalid+.input-group-text {
+    background-color: #dc3545;
+}
+
+/* Estilización del título */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilización de los íconos FontAwesome */
+.fa {
+    transition: color 0.3s ease;
+}
+
+
+
+/* Galería de imágenes */
+
+.gallery {
+    margin-top: 20px;
+}
+
+.gallery-item {
+    padding: 5px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item:hover {
+    transform: scale(1.5);
+    z-index: 1000;
+}
+
+.gallery-item:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-item:hover:after {
+    opacity: 1;
+}
+
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.book-container {
+    position: relative;
+}
+
+.select-book {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-book::after {
+    content: "\2713";
+    /* Unicode para el símbolo de check */
+    display: none;
+    color: #000;
+}
+
+.hidden-checkbox:checked+.book-container .select-book::after {
+    display: block;
+}
+
+.btn-primary {
+    margin-bottom: 60px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px) scale(1.5);
+}

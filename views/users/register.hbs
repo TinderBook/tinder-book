@@ -1,13 +1,11 @@
-<section class="container">
+<section class="container ">
   <h2 class="mb-3">Register</h2>
   <form action="/register" method="POST">
 
+    <div class="d-flex justify-content-center mb-5">
+      <div style="width: 100%; max-width: 500px;">
 
-
-
-    {{!--NAME--}}
-    <div class="row">
-      <div class="col-6">
+        {{!--NAME--}}
         <div class="input-group mb-2">
           <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
           <input type="text" name="name" class="form-control {{#if errors.name}} is-invalid {{/if}}" placeholder="name"
@@ -24,7 +22,7 @@
         </div>
 
         {{!--gender--}}
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
           <span class="input-group-text"><i class="fa fa-fw fa-venus-mars"></i></span>
           <select name="gender" class="form-select {{#if errors.gender}} is-invalid {{/if}}">
             <option value="" disabled {{#unless user.gender}}selected{{/unless}}>Select your gender
@@ -36,9 +34,8 @@
         </div>
 
 
-
         {{!--email--}}
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
           <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
           <input type="text" name="email" class="form-control {{#if errors.email}} is-invalid {{/if}}"
             placeholder="email" aria-label="Name" value="{{user.email}}">
@@ -46,7 +43,7 @@
         </div>
 
         {{!--username--}}
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
           <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
           <input type="text" name="username" class="form-control {{#if errors.username}} is-invalid {{/if}}"
             placeholder="username" aria-label="Name" value="{{user.username}}">
@@ -54,34 +51,35 @@
         </div>
 
         {{!--password--}}
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
           <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
           <input type="password" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}"
             placeholder="Enter your password" aria-label="Password">
           {{#if errors.password}}<div class="invalid-feedback fs-6">{{errors.password}}</div>{{/if}}
         </div>
       </div>
+    </div>
 
-      {{!-- edit books --}}
-      <div class="col-6">
-        <section class="row"> <!-- Agregamos la clase "row" aquí -->
-          {{#each books as |book|}}
-          <div class="col-3 position-relative"> <!-- Cambiamos la clase aquí a "col-3" -->
-            <label for="book-{{book.id}}">
-              <img src="{{book.coverImage}}" class="d-block w-100" alt="{{book.title}}">
-            </label>
-            <input type="checkbox" name="books" id="book-{{book.id}}" class="" />
-          </div>
-          {{/each}}
-        </section>
+    {{!-- edit books --}}
+    <section class="row gallery mt-4">
+      {{#each books as |book|}}
+      <div class="col-2 gallery-item">
+        <div class="book-container">
+          <a href="{{book.coverImage}}" data-lightbox="gallery" data-title="{{book.title}}">
+            <img src="{{book.coverImage}}" class="img-fluid" alt="{{book.title}}">
+          </a>
+          <label for="book-{{book.id}}" class="select-book"></label>
+        </div>
+        <input type="checkbox" name="books" id="book-{{book.id}}" class="hidden-checkbox" />
       </div>
+      {{/each}}
+    </section>
 
 
+   <div class="d-flex justify-content-center mt-2 mb-3">
+    <button class="btn btn-primary mx-auto" style="width: 200px;">Register</button>
+</div>
 
 
-
-      <div class="d-grid gap-3 mt-2">
-        <button class="btn btn-primary">Register</button>
-      </div>
   </form>
 </section>
