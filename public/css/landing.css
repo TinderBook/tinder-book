@@ -37,3 +37,23 @@
     padding: 5px 10px; 
     border-radius: 5px; 
 }
+
+.carousel-control-prev, .carousel-control-next {
+    width: 50px;  /* Ancho de botones */
+    height: 50px; /* Altura de botones */
+    top: calc(50% - 25px); /* Posición vertical centrada */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 40px; /* Tamaño de las flechas */
+    width: 40px;
+}
+
+.carousel-control-prev-icon {
+    margin-left: 20px;
+}
+
+.carousel-control-next-icon {
+    margin-right: 20px;
+}
+
