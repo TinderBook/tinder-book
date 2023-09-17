@@ -24,3 +24,13 @@ hbs.registerHelper('ifUser', function (val1, val2, options) {
 });
 
 hbs.registerHelper('eq', (v1, v2) => v1 === v2);
+
+
+hbs.registerHelper('formatDate', function(date) {
+    return date.toISOString().split('T')[0];
+});
+
+
+hbs.registerHelper('eq', function(a, b) {
+    return a === b;
+});

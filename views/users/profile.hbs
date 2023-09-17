@@ -8,12 +8,23 @@
                     <h3 class="mb-4"></h3>
                     <h5><i> {{user.description}}</i> </h5>
                 </div>
-                
-              
+
+                {{!-- Gender in Spanish --}}
+                <h4>Género: 
+                    {{#if (eq user.gender 'male')}}
+                        Masculino
+                    {{else}}
+                        Femenino
+                    {{/if}}
+                </h4>
+
+                {{!-- Age from date of birth --}}
+                <h4>Edad: {{user.age}}</h4>
+
+            
 
             </div>
-            {{!-- <hr> --}}
-            <h3 class="mb-4">Liked Books:</h3>
+            <h3 class="mb-4">Libros Favoritos:</h3>
             <section class="d-flex flex-wrap">
                 {{#each user.likedBooks as |book|}}
                     <img src="{{book.coverImage}}" class="w-50" alt="{{book.coverImage}}">
