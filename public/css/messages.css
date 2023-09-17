@@ -43,5 +43,15 @@ h2 {
     font-size: 24px;
 }
 
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea la imagen y el contenido en la parte superior */
+    margin-bottom: 1rem; /* Agrega un espacio entre mensajes */
+}
+
+.message img {
+    margin-right: 1rem; /* Espacio a la derecha de la imagen */
+}
 
 
