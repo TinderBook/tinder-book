@@ -10,7 +10,6 @@ module.exports.register = (req, res, next) => {
 }
 
 module.exports.doRegister = (req, res, next) => {
-    // Verifica si el username ya existe
     User.findOne({ username: req.body.username })
         .then((user) => {
             if (user) {
@@ -25,7 +24,6 @@ module.exports.doRegister = (req, res, next) => {
                         })
                     })
             } else {
-                // Si el username no existe, verifica si el email ya está en uso
                 return User.findOne({ email: req.body.email })
                     .then(userWithEmail => {
                         if (userWithEmail) {
@@ -40,7 +38,9 @@ module.exports.doRegister = (req, res, next) => {
                                     });
                                 });
                         } else {
-                            // Si el email tampoco está en uso, crea el usuario
+                            // Convert likedBooks to an array if it's not
+                            req.body.likedBooks = typeof req.body.likedBooks === 'string' ? [req.body.likedBooks] : req.body.likedBooks;
+
                             return User.create(req.body)
                                 .then(() => {
                                     res.redirect('/login')
@@ -65,6 +65,7 @@ module.exports.doRegister = (req, res, next) => {
             }
         })
 }
+
 
 
 module.exports.login = (req, res, next) => {
@@ -162,11 +163,13 @@ module.exports.doEditProfile = (req, res, next) => {
                 req.body.likedBooks = typeof req.body.likedBooks === 'string' ? [req.body.likedBooks] : req.body.likedBooks
 
                 let updates = {
-                    avatarUrl: req.file.path,
                     username: req.body.username,
                     description: req.body.description,
                     likedBooks: req.body.likedBooks
                 };
+                if (req.file && req.file.path) {
+                    updates.avatar = req.file.path;
+                }
                 return User.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true })
                     .then(() => res.redirect("/user/profile"));
             }

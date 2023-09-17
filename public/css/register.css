@@ -95,40 +95,15 @@ h2 {
     opacity: 1;
 }
 
-.hidden-checkbox {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-}
-
+/* Hacer que el checkbox esté encima de la imagen */
 .book-container {
     position: relative;
 }
 
-.select-book {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.select-book::after {
-    content: "\2713";
-    /* Unicode para el símbolo de check */
-    display: none;
-    color: #000;
-}
 
-.hidden-checkbox:checked+.book-container .select-book::after {
-    display: block;
-}
+
+
 
 .btn-primary {
     margin-bottom: 60px;

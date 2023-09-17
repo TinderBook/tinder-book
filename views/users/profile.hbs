@@ -9,13 +9,7 @@
                     <h5><i> {{user.description}}</i> </h5>
                 </div>
                 
-                <form action="/user/{{user._id}}/edit" method="POST">
-                    <div class="mb-3">
-                        <label for="description" class="form-label text-muted small"></label>
-                        <textarea name="description" class="form-control " id="description" rows="2">{{user.description}}</textarea>
-                        <button type="submit" class="btn btn-secondary mb-2">Status</button>
-                    </div>
-                </form>
+              
 
             </div>
             {{!-- <hr> --}}

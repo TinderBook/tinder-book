@@ -61,24 +61,27 @@
     </div>
 
     {{!-- edit books --}}
-    <section class="row gallery mt-4">
-      {{#each books as |book|}}
-      <div class="col-2 gallery-item">
+<section class="row gallery mt-4">
+    {{#each books as |book|}}
+    <div class="col-2 gallery-item">
         <div class="book-container">
-          <a href="{{book.coverImage}}" data-lightbox="gallery" data-title="{{book.title}}">
-            <img src="{{book.coverImage}}" class="img-fluid" alt="{{book.title}}">
-          </a>
-          <label for="book-{{book.id}}" class="select-book"></label>
+            <a href="{{book.coverImage}}" data-lightbox="gallery" data-title="{{book.title}}">
+                <img src="{{book.coverImage}}" class="img-fluid" alt="{{book.title}}">
+            </a>
+            <div class="custom-control custom-checkbox book-checkbox">
+                <input type="checkbox" class="custom-control-input" name="likedBooks" value="{{book._id}}" id="book-{{book.id}}">
+                <label class="custom-control-label" for="book-{{book.id}}"></label>
+            </div>
         </div>
-        <input type="checkbox" name="books" id="book-{{book.id}}" class="hidden-checkbox" />
-      </div>
-      {{/each}}
-    </section>
+    </div>
+    {{/each}}
+</section>
 
 
-   <div class="d-flex justify-content-center mt-2 mb-3">
+<div class="d-flex justify-content-center mt-2 mb-3">
     <button class="btn btn-primary mx-auto" style="width: 200px;">Register</button>
 </div>
+
 
 
   </form>
