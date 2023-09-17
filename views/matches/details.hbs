@@ -7,7 +7,7 @@
     <style>
       .sender-name {
               font-size: 1.2rem; 
-              margin-left: 0.2rem;
+              
               font-family: cursive;
               flex-shrink: 0;  
           }
@@ -17,6 +17,7 @@
           }    
       .message, .message-content {
               max-width: 80%; 
+              text-align: start;
           }    
       .message-size {
               font-size: 1.2rem;
@@ -44,16 +45,18 @@
         {{#ifEqual this.sender._id ../currentUser._id}}
        
         <div class="message sent">
+          <div>
             <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
-            <span class="text-muted pl-2 sender-name">{{this.sender.username}}</span>
-            <p class="mb-1 message-size">{{this.content}}</p>
-            <span class="text-muted small">{{elapsedTime this.createdAt}}</span>
-
-          
+            <span class="text-muted sender-name">{{this.sender.username}}</span>
+          </div>
+          <p class="mb-1 message-size">{{this.content}}</p>
+          <span class="text-muted small">{{elapsedTime this.createdAt}}</span>
           {{else}}
           <div class="message received">
-            <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
-            <span class="text-muted sender-name">{{this.sender.username}}</span>
+            <div>
+              <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+              <span class="text-muted sender-name">{{this.sender.username}}</span>
+            </div>
             <p class="mb-1 message-size">{{this.content}}</p>
             <span class="text-muted small">{{elapsedTime this.createdAt}}</span>
             {{/ifEqual}}
