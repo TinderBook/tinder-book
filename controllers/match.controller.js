@@ -4,7 +4,14 @@ module.exports = {
     viewMyMatches: (req, res, next) => {
         const userId = req.user.id;
         Match.find({ $or: [{ user1: userId }, { user2: userId }] })
-            .populate('user1 user2')
+            .populate({
+                path: 'user1',
+                populate: { path: 'likedBooks' }
+            })
+            .populate({
+                path: 'user2',
+                populate: { path: 'likedBooks' }
+            })
             .then(matches => {
                 const matchedUsers = matches
                     .filter(match => match.user1 && match.user2)  // Filtramos los matches donde ambos usuarios existen
