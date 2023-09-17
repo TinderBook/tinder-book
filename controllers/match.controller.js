@@ -6,17 +6,20 @@ module.exports = {
         Match.find({ $or: [{ user1: userId }, { user2: userId }] })
             .populate('user1 user2')
             .then(matches => {
-                const matchedUsers = matches.map(match => {
-                    let user = match.user1._id.toString() === userId ? match.user2 : match.user1;
-                    return {
-                        user: user,
-                        matchId: match._id.toString()
-                    }
-                });
+                const matchedUsers = matches
+                    .filter(match => match.user1 && match.user2)  // Filtramos los matches donde ambos usuarios existen
+                    .map(match => {
+                        let user = match.user1._id.toString() === userId ? match.user2 : match.user1;
+                        return {
+                            user: user,
+                            matchId: match._id.toString()
+                        };
+                    });
                 res.render('users/my-matches', { matches: matchedUsers });
             })
             .catch(err => next(err));
     },
+    
 
     matchDetails: (req, res, next) => {
         Match.findById(req.params.id)
