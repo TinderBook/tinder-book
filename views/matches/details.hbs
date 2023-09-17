@@ -8,7 +8,7 @@
       .sender-name {
               font-size: 1.2rem; 
               
-              font-family: cursive;
+              font-family:'Times New Roman', Times, serif;
               flex-shrink: 0;  
           }
       .messages-container {
@@ -22,6 +22,12 @@
       .message-size {
               font-size: 1.2rem;
           }
+
+      .message .rounded-circle.avatar-margin {
+        margin-right: 1px;
+      }
+
+    
     </style>  
 
 
@@ -46,7 +52,7 @@
        
         <div class="message sent">
           <div>
-            <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+            <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle avatar-margin" width="50">
             <span class="text-muted sender-name">{{this.sender.username}}</span>
           </div>
           <p class="mb-1 message-size">{{this.content}}</p>
@@ -54,7 +60,7 @@
           {{else}}
           <div class="message received">
             <div>
-              <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+              <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle avatar-margin" width="50">
               <span class="text-muted sender-name">{{this.sender.username}}</span>
             </div>
             <p class="mb-1 message-size">{{this.content}}</p>
