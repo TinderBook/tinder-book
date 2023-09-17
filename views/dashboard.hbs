@@ -1,49 +1,46 @@
-<style>
-    /* Estilo para las imágenes */
-    .book-group {
-        transition: transform 0.3s ease-in-out; /* Añade una transición suave */
-    }
+<script src="js/userSlider.js"></script>
 
-    .book-group:hover {
-        transform: scale(1.1); /* Agrandamos el contenedor un 10% al pasar el cursor */
-    }
-</style>
+
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-10">  
+        <div class="col-md-10 slider-container">  
 
             {{#if messages.success}}
             <div class="alert alert-success">{{messages.success}}</div>
             {{/if}}
 
+            <div class="users-wrapper">
             {{#each users as |user|}}
-            <div class="user-container mb-5 position-relative">
-                <div class="text-center">                   
-                    <h2 class="mt-2">{{user.username}}</h2>
-                    <h5><i>{{user.description}}</i></h5>
+                <div class="user-container position-relative">
+                    <div class="text-center">                   
+                        <h2 class="mt-2">{{user.username}}</h2>
+                        <h5><i>{{user.description}}</i></h5>
 
-                    <!-- Aquí está el botón de "Like" -->
-                    <form action="/like/{{user._id}}" method="post" class="mt-3 position-absolute top-50 start-50">
-                        {{#if user.isLiked}}
-                        <input type="hidden" name="action" value="unlike">
-                        <button type="submit" class="btn btn-danger btn-sm">Unlike</button>
-                        {{else}}
-                        <input type="hidden" name="action" value="like">
-                        <button type="submit" class="btn btn-primary btn-sm">Like</button>
-                        {{/if}}
-                    </form>
-
+                        <!-- Aquí está el botón de "Like" -->
+                        <form action="/like/{{user._id}}" method="post" class="mt-3 position-absolute top-50 start-50">
+                            {{#if user.isLiked}}
+                            <input type="hidden" name="action" value="unlike">
+                            <button type="submit" class="btn btn-danger btn-sm">Unlike</button>
+                            {{else}}
+                            <input type="hidden" name="action" value="like">
+                            <button type="submit" class="btn btn-primary btn-sm">Like</button>
+                            {{/if}}
+                        </form>
+                    </div>
+                    
+                    <div class="book-group d-flex flex-wrap">
+                        {{#each user.likedBooks as |book|}}
+                            <img src="{{book.coverImage}}" class="w-50" alt="{{book.coverImage}}">
+                        {{/each}}
+                    </div>
                 </div>
-                
-                <div class="book-group d-flex flex-wrap"> <!-- Añadido contenedor -->
-                    {{#each user.likedBooks as |book|}}
-                        <img src="{{book.coverImage}}" class="w-50" alt="{{book.coverImage}}">
-                    {{/each}}
-                </div>
-            </div>
             {{/each}}
+            </div>
 
+            <button class="slider-button prev">&#10094;</button>
+            <button class="slider-button next">&#10095;</button>
         </div>
     </div>
 </div>
+

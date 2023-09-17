@@ -1,20 +1,125 @@
+.slider-container {
+   aspect-ratio: auto;
+   width: 500px;
+   position: relative;
+   display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    
+}
+
+.users-wrapper {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.5s;
+    
+}
+
+.user-container {
+    flex: 0 0 100%; 
+    transition: transform 0.5s;
+    will-change: transform;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff3b;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+}
+
+
+
+
+
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.user-container h2 { /* username */
+    height: 50px; /* o la altura que prefieras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* oculta el exceso de texto */
+    padding: 20px;
+    background-color: #ffffff3b;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.user-container h5 { /* description */
+    height: 70px; /* o la altura que prefieras, considerando que la descripción puede ser más larga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* oculta el exceso de texto */
+    margin-bottom: 10px; /* Espacio entre description y el siguiente elemento, en este caso, el botón */
+
+
+}
+
+
+.slider-button:focus {
+    outline: none;
+}
+
+.slider-button.prev {
+    left: 10px;
+}
+
+.slider-button.next {
+    right: 10px;
+}
+
+
+
+
 /*@keyframes show {
     from {
         opacity: 0;
-        transform: scale(0.25);
+         scale: 25%;
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+       scale: 100%;
     }
 }
 
-section.d-flex.flex-wrap img {
+.book-group {
+    view-timeline-name: --revealing-image;
     animation-name: show;
     animation-fill-mode: both;
+    animation-range: entry 25% cover 50%;
 }
 .user-container section:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
+    transition: transform 0.3s ease-in-out;}
+*/
+
+
+   /*.book-group {
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .book-group:hover {
+        transform: scale(1.1);
+    }*/
