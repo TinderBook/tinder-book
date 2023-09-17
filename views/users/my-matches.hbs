@@ -1,18 +1,50 @@
+<style>
+    .custom-small-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .custom-border {
+    border-color: gray !important; /* Utiliza !important para asegurarte de que este estilo tenga prioridad sobre el estilo de Bootstrap */
+    }
+
+</style>
+
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            {{#each matches as |matchData|}}
-            <div class="mb-4 border rounded p-3 shadow-sm">
-                <div class="d-flex align-items-center justify-content-start">
-                    <img src="{{matchData.user.avatarUrl}}" alt="Avatar" class="rounded-circle mr-4" width="150">
-                    <div class="text-center flex-grow-1">
-                        <h2>{{matchData.user.username}}</h2>
-                        <h5 class="text-muted"><i>{{matchData.user.description}}</i></h5>
-                        <a class="btn btn-primary btn-sm mt-2" href="/match/{{matchData.matchId}}">Message</a>
-                    </div>
-                </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {{#each matches as |matchData|}}
+      <div class="mb-4 border custom-border rounded p-3 shadow-sm">
+        <div class="d-flex align-items-center justify-content-start">
+          <img src="{{matchData.user.avatarUrl}}" alt="Avatar" class="rounded-circle mr-4" width="150">
+          <div class="text-center flex-grow-1">
+              <h2>{{matchData.user.username}}</h2>
+              <h5 class="text-muted"><i>{{matchData.user.description}}</i></h5>
+              <h4 class="text-muted small">Gender: 
+                  {{#if (eq user.gender 'male')}}
+                      Male
+                  {{else}}
+                      Female
+                  {{/if}}
+              </h4>
+
+              <!-- Age from date of birth -->
+              <h4 class="text-muted small">Edad: {{user.age}}</h4>
+
+              <!-- Sección de libros -->
+              <div class="d-flex justify-content-center mt-3">
+                  {{#each matchData.user.likedBooks as |book|}}
+                  <div class="mr-2">
+                      <img src="{{book.coverImage}}" alt="{{book.title}}" class="rounded m-1" style="width: 90px; height: 130px;">
+                  </div>
+                  {{/each}}
+              </div>
+
+              <a class="btn btn-primary custom-small-btn mt-4" href="/match/{{matchData.matchId}}">Message</a>
             </div>
-            {{/each}}
-        </div>
+          </div>
+      </div>
+      {{/each}}
     </div>
+  </div>
 </div>
