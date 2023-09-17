@@ -1,4 +1,3 @@
-
 <script src="/js/scripts.js"></script>
 
 <div class="container mt-5">
@@ -7,19 +6,20 @@
 
     <style>
       .sender-name {
-              font-size: 0.9rem; 
-              margin-left: 0.5rem;
-              flex-shrink: 0;  /* Asegúrate de que el nombre no se reduzca */
+              font-size: 1.2rem; 
+              margin-left: 0.2rem;
+              font-family: cursive;
+              flex-shrink: 0;  
           }
       .messages-container {
-              height: 800px; 
+              height: 600px; 
               overflow-y: auto;
           }    
       .message, .message-content {
-              max-width: 80%;  /* Establece un ancho máximo. Puedes ajustar este valor según tus necesidades. */
+              max-width: 80%; 
           }    
       .message-size {
-              font-size: 1.5rem;
+              font-size: 1.2rem;
           }
     </style>  
 
@@ -44,14 +44,18 @@
         {{#ifEqual this.sender._id ../currentUser._id}}
        
         <div class="message sent">
-           <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
-          <p class="mb-1 message-size">{{this.content}}</p>
-          <small class="text-muted">Enviado por: {{this.sender.username}}</small>
+            <img src="{{../currentUser.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+            <span class="text-muted pl-2 sender-name">{{this.sender.username}}</span>
+            <p class="mb-1 message-size">{{this.content}}</p>
+            <span class="text-muted small">{{elapsedTime this.createdAt}}</span>
+
+          
           {{else}}
           <div class="message received">
             <img src="{{this.sender.avatarUrl}}" alt="Avatar" class="rounded-circle" width="50">
+            <span class="text-muted sender-name">{{this.sender.username}}</span>
             <p class="mb-1 message-size">{{this.content}}</p>
-            <small class="text-muted">Recibido de: {{this.sender.username}}</small>
+            <span class="text-muted small">{{elapsedTime this.createdAt}}</span>
             {{/ifEqual}}
           </div>
           {{/each}}
