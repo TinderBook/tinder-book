@@ -194,5 +194,5 @@ module.exports.doEditProfile = (req, res, next) => {
 
 module.exports.logout = (req, res, next) => {
     req.session.destroy();
-    res.redirect('/login')
+    res.redirect('/')
 }
