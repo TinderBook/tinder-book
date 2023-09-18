@@ -14,19 +14,22 @@
 
           {{!-- username edit --}}
           <div class="mb-3">
-            <label for="username" class="form-label text-muted small">Username</label>
-            <input name="username" type="text" class="form-control {{#if errors.name}} is-invalid {{/if}}" id="username"
-              placeholder="username" value="{{user.username}}" />
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-fw fa-tag"></i></span>
+              <input name="username" type="text" class="form-control {{#if errors.name}} is-invalid {{/if}}" id="username" placeholder="username" value="{{user.username}}" />
+            </div>
             {{#if errors.username}}<div class="invalid-feedback fs-6">{{errors.username}}</div>{{/if}}
-
           </div>
 
-          {{!-- edit description --}}
+          
+          <!-- edit description -->
           <div class="mb-3">
-            <label for="description" class="form-label text-muted small">Status</label>
-            <textarea name="description" class="form-control" id="description" rows="5"
-              placeholder="Edit status...">{{user.description}}</textarea>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-fw fa-pencil"></i></span>
+              <textarea name="description" class="form-control auto-expand" id="description" rows="1" placeholder="Edit status...">{{user.description}}</textarea>
+            </div>
           </div>
+
 
           {{!-- edit like books --}}
           <section class="row gallery mt-4">
