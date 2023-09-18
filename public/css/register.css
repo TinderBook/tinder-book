@@ -95,7 +95,6 @@ h2 {
     opacity: 1;
 }
 
-
 .book-container {
     position: relative;
 }
@@ -103,12 +102,6 @@ h2 {
 .book-container input[type="checkbox"]:checked~a {
     filter: brightness(50%);
 }
-
-
-
-
-
-
 
 .btn-primary {
     margin-bottom: 60px;

@@ -9,89 +9,67 @@
                     <h5><i> {{user.description}}</i> </h5>
                 </div>
 
-                
-                <h4>Gender: 
+
+                <h4>Gender:
                     {{#if (eq user.gender 'male')}}
-                        Male
+                    Male
                     {{else}}
-                        Female
+                    Female
                     {{/if}}
                 </h4>
 
                 <h4>Edad: {{user.age}}</h4>
 
-            
+
 
             </div>
             <h3 class="mb-4">Libros Favoritos:</h3>
             <section class="d-flex flex-wrap">
                 {{#each user.likedBooks as |book|}}
-                    <img src="{{book.coverImage}}" class="w-50 p-1" alt="{{book.coverImage}}">
+                <img src="{{book.coverImage}}" class="w-50 p-1" alt="{{book.coverImage}}">
                 {{/each}}
             </section>
         </div>
     </div>
 </div> --}}
 
-<style>
-    /* Estilos adicionales */
-    .status-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
 
-    .text-form.small {
-        width: 200px; /* ajusta según lo necesites */
-        height: 40px; /* ajusta según lo necesites */
-        resize: none; /* evita que se redimensione */
-        padding: 4px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-    }
-
-    .btn-status-update {
-        align-self: flex-end;
-    }
-</style>
 
 <div class="container mt-5">
-  <div class="row justify-content-center">
-      <div class="col-md-8">
-          <div class="text-center">
-              <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
-              <h2 class="mt-2">{{user.username}}</h2>
-              <div class="mt-2">
-                <div class="mt-2 status-container">
-                    <h5><i> {{user.description}}</i> </h5>
-                    <form action="/user/{{user._id}}/edit" method="post" class="d-flex flex-nowrap mt-2 mb-4">
-                      <label for="status" class="visually-hidden">Actualizar estado</label>
-                      <textarea name="description" id="status" class="text-form small" placeholder="Actualiza tu estado..."></textarea>
-                      <button type="submit" class="btn btn-success btn-status-update">Actualizar</button>
-                    </form>
-                </div >
-            
-                <h4 class="small ">Gender: 
-                  {{#if (eq user.gender 'male')}}
-                      Male
-                  {{else}}
-                      Female
-                  {{/if}}
-                </h4>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center">
+                <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle" width="150">
+                <h2 class="mt-2">{{user.username}}</h2>
+                <div class="mt-2">
+                    <div class="mt-2 status-container">
+                        <h5><i> {{user.description}}</i> </h5>
+                        <form action="/user/{{user._id}}/edit" method="post" class="d-flex flex-nowrap mt-2 mb-4">
+                            <label for="status" class="visually-hidden">Actualizar estado</label>
+                            <textarea name="description" id="status" class="text-form small"
+                                placeholder="Actualiza tu estado..."></textarea>
+                            <button type="submit" class="btn btn-success btn-status-update">Actualizar</button>
+                        </form>
+                    </div>
 
-                <h4 class="small">Edad: {{user.age}}</h4>
+                    <h4 class="small ">Gender:
+                        {{#if (eq user.gender 'male')}}
+                        Male
+                        {{else}}
+                        Female
+                        {{/if}}
+                    </h4>
 
-              </div>
-              <h3 class="mb-4">Libros Favoritos:</h3>
-              <section class="d-flex flex-nowrap m-1">
-                {{#each user.likedBooks as |book|}}
-                  <img src="{{book.coverImage}}" class="w-25 p-0.5 m-1" alt="{{book.coverImage}}">
-                {{/each}}
-              </section>
-          </div>
-      </div>
-  </div>
+                    <h4 class="small">Edad: {{user.age}}</h4>
+
+                </div>
+                <h3 class="mb-4">Libros Favoritos:</h3>
+                <section class="d-flex flex-nowrap m-1">
+                    {{#each user.likedBooks as |book|}}
+                    <img src="{{book.coverImage}}" class="w-25 p-0.5 m-1 book-image" alt="{{book.coverImage}}">
+                    {{/each}}
+                </section>
+            </div>
+        </div>
+    </div>
 </div>
-
