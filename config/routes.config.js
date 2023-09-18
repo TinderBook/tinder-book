@@ -20,7 +20,7 @@ router.post('/login', users.doLogin)
 router.get('/user/profile', secure.isAuthenticated, users.profile)
 router.post('/user/:id/edit', secure.isAuthenticated, users.editDescription)
 router.get('/user/:id/editProfile', secure.isAuthenticated, users.editProfile)
-router.post('/user/:id/editProfile', secure.isAuthenticated,upload.single('image'), users.doEditProfile )
+router.post('/user/:id/doEditProfile', secure.isAuthenticated,upload.single('image'), users.doEditProfile )
 router.post('/logout', secure.isAuthenticated, users.logout)
 
 //like ROUTE

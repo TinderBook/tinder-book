@@ -3,10 +3,10 @@
     <div class="col-md-8">
       <div class="text-center">
 
-        <form action="/user/{{user._id}}/editProfile" method="POST" enctype="multipart/form-data">
+        <form action="/user/{{user._id}}/doEditProfile" method="POST" enctype="multipart/form-data">
           {{!-- editar imagen --}}
           <div class="mb-3">
-            <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle mb-5" width="180">
+            <img src="{{user.avatarUrl}}" alt="Avatar" class="rounded-circle mb-5" width="180" >
             <label for="image" class="form-label">Profile Imagen</label>
             <input name="image" type="file" class="form-control" id="image" />
 

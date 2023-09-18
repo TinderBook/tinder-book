@@ -166,10 +166,10 @@ module.exports.doEditProfile = (req, res, next) => {
                 let updates = {
                     username: req.body.username,
                     description: req.body.description,
-                    likedBooks: req.body.likedBooks
+                    likedBooks: req.body.likedBooks,
                 };
                 if (req.file && req.file.path) {
-                    updates.avatar = req.file.path;
+                    updates.avatarUrl = req.file.path;
                 }
                 return User.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true })
                     .then(() => res.redirect("/user/profile"));
