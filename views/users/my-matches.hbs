@@ -13,6 +13,12 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
+      {{#if noMatches}}
+      <div class="text-center mt-5">
+        <h3>No tienes matches todavia</h3>
+        <p>Sigue navegando para encontrar a alguien especial.</p>
+      </div>
+      {{else}}
       {{#each matches as |matchData|}}
       <div class="mb-4 border custom-border rounded p-3 shadow-sm">
         <div class="d-flex align-items-center justify-content-start">
@@ -45,6 +51,7 @@
           </div>
       </div>
       {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>
