@@ -44,3 +44,8 @@ hbs.registerHelper('eq', function(a, b) {
 hbs.registerHelper('elapsedTime', (createdAt, options) => {
     return moment(createdAt).fromNow();
 } )
+
+
+hbs.registerHelper('addOne', function(value) {
+    return value + 1;
+});

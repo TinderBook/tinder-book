@@ -6,6 +6,7 @@ const users = require('../controllers/users.controller')
 const likes = require('../controllers/likes.controller') 
 const messages = require('../controllers/messages.controllers') 
 const matchController = require('../controllers/match.controller')
+const booksController = require('../controllers/books.controller')
 
 //multer-cloudinary
 const upload = require('./multer.config')
@@ -42,5 +43,8 @@ router.post('/matches/:id/messages', secure.isAuthenticated, messages.doCreate)
 //home views
 router.get('/dashboard', secure.isAuthenticated, dashboard.showUsers);
 router.get('/', (req, res, next) => res.render('landing'))
+
+//books views
+router.get('/books/mostReadBooks', booksController.getMostReadBooks)
 
 module.exports = router;

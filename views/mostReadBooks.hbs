@@ -1,0 +1,14 @@
+<section class="book-section">
+  <h2>Top 10 Libros Más Leídos</h2>
+  <div class="books-grid">
+    {{#each books as |book index|}}
+      <div class="book-card">
+        <span class="book-number">{{addOne index}}</span> <!-- Asumiendo que tienes un helper para sumar 1 -->
+        <img src="{{book.coverImage}}" alt="{{book.title}}">
+        <h3>{{book.title}}</h3>
+        <p>Author: {{book.author}}</p>
+        <p>Likes: {{book.likesCount}}</p>
+      </div>
+    {{/each}}
+  </div>
+</section>

@@ -5,7 +5,7 @@ const app = express();
 const logger = require('morgan');
 const flash = require('connect-flash');
 const notificationsMiddleware = require('./middlewares/notifications.middleware').notifications;
-
+const booksController = require('./controllers/books.controller');
 //connect mongo
 require('./config/db.config')
 
