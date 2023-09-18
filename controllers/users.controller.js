@@ -107,6 +107,7 @@ module.exports.profile = (req, res, next) => {
     User.findById(req.user)
         .populate('likedBooks')
         .then(user => {
+            user._id = user._id.toString();
             res.render('users/profile', { user: user })
         })
         .catch(error => next(error))
