@@ -4,5 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: rgb(253,29,29);
-    background: radial-gradient(circle, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 46%, rgba(172,30,138,1) 100%);
+    /* background: radial-gradient(circle, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 46%, rgba(172,30,138,1) 100%); */
+    background: radial-gradient(circle, rgba(240, 235, 230, 1) 0%, rgba(200, 215, 225, 1) 100%);
+
 }
