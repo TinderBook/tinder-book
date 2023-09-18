@@ -35,6 +35,22 @@
     
 }
 
+.flex-container {
+    position: relative;
+}
+
+.book-group {
+    position: relative;
+    z-index: 1;  /* Asegúrate de que los libros estén por encima del botón */
+}
+
+.like-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centra el botón */
+    z-index: 2;  /* Asegúrate de que el botón esté por encima de los libros */
+}
 
 
 

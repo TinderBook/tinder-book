@@ -1,7 +1,5 @@
 <script src="js/userSlider.js"></script>
 
-
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10 slider-container">  
@@ -23,34 +21,41 @@
                             {{/if}}
                         </h4>
 
-                {{!-- Age from date of birth --}}
-                <h4 class="text-muted small">Age: {{user.age}}</h4>
-                <h5><i>{{user.description}}</i></h5>
+                        <!-- Age from date of birth -->
+                        <h4 class="text-muted small">Age: {{user.age}}</h4>
+                        <h5><i>{{user.description}}</i></h5>
+                    </div>
 
-                <!-- Aquí está el botón de "Like" -->
-                <form action="/like/{{user._id}}" method="post" class="mt-3 position-absolute top-50 start-50">
-                    {{#if user.isLiked}}
-                    <input type="hidden" name="action" value="unlike">
-                    <button type="submit" class="btn btn-danger btn-sm">Unlike</button>
-                    {{else}}
-                    <input type="hidden" name="action" value="like">
-                    <button type="submit" class="btn btn-primary btn-sm">Like</button>
-                    {{/if}}
-                </form>
-            </div>
+                    <!-- Flex Container for books and like button -->
+                    <div class="flex-container">
+                        
+                        <!-- Book group -->
+                        <div class="book-group d-flex flex-wrap">
+                            {{#each user.likedBooks as |book|}}
+                                <img src="{{book.coverImage}}" class="w-50" alt="{{book.coverImage}}">
+                            {{/each}}
+                        </div>
+
+                        <!-- Like button -->
+                        <form action="/like/{{user._id}}" method="post" class="like-button">
+                            {{#if user.isLiked}}
+                            <input type="hidden" name="action" value="unlike">
+                            <button type="submit" class="btn btn-danger btn-sm">Unlike</button>
+                            {{else}}
+                            <input type="hidden" name="action" value="like">
+                            <button type="submit" class="btn btn-primary btn-sm">Like</button>
+                            {{/if}}
+                        </form>
+                        
+                    </div> <!-- End of flex-container -->
                     
-            <div class="book-group d-flex flex-wrap">
-                {{#each user.likedBooks as |book|}}
-                    <img src="{{book.coverImage}}" class="w-50" alt="{{book.coverImage}}">
-                {{/each}}
-            </div>
-        </div>
-        {{/each}}
-    </div>
+                </div> <!-- End of user-container -->
+            {{/each}}
+
+            </div> <!-- End of users-wrapper -->
 
             <button class="slider-button prev">&#10094;</button>
             <button class="slider-button next">&#10095;</button>
-        </div>
-    </div>
-</div>
-
+        </div> <!-- End of col-md-10 slider-container -->
+    </div> <!-- End of row justify-content-center -->
+</div> <!-- End of container mt-5 -->
