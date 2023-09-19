@@ -5,8 +5,12 @@
     }
 
     .custom-border {
-    border-color: gray !important; 
+    border-color: rgba(128, 128, 128, 0.856) !important; 
     }
+
+    .custom-gradient {
+    background-image: radial-gradient(circle at 50% 50%, #dce7f2 0, #a4bcd3 50%, #6c92b5 100%);
+}
 
 </style>
 
@@ -20,7 +24,7 @@
       </div>
       {{else}}
       {{#each matches as |matchData|}}
-      <div class="mb-4 border custom-border rounded p-3 shadow-sm">
+      <div class="mb-4 border custom-border rounded p-3 shadow-sm custom-gradient">
         <div class="d-flex align-items-center justify-content-start">
           <img src="{{matchData.user.avatarUrl}}" alt="Avatar" class="rounded-circle mr-4" width="120">
           <div class="text-center flex-grow-1">
