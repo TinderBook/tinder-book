@@ -15,7 +15,7 @@ function findRandomUser() {
 
 
 module.exports.showUsers = (req, res, next) => {
-    const numRandomUsers = 10;
+    const numRandomUsers = 15;
     const users = [];
 
     function addRandomUser() {

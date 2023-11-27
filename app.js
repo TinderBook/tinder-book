@@ -23,6 +23,7 @@ app.use(logger('dev'))
 
 //config session archivo y sus middlewares 
 const sessionConfig = require('./config/session.config');
+
 app.use(sessionConfig.session);
 app.use(sessionConfig.loadSessionUser);
 app.use(notificationsMiddleware);

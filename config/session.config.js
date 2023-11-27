@@ -23,7 +23,6 @@ module.exports.loadSessionUser = (req, res, next) => {
         User.findById(userId)
         .populate('likedBooks')
         .then((user) => {
-            
             req.user = user;
             res.locals.currentUser = user;
            
